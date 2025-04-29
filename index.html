@@ -57,18 +57,20 @@
             productos de alta calidad.
           </p>
           <div class="social-links">
-            <a href="https://github.com/Alons08" target="_blank"
-              ><i class="fab fa-github fa-2x"></i
-            ></a>
-            <a href="https://linkedin.com/in/tuperfil" target="_blank"
-              ><i class="fab fa-linkedin fa-2x"></i
-            ></a>
-            <a href="mailto:alonsoleandro.dev@gmail.com"
-              ><i class="fas fa-envelope fa-2x"></i
-            ></a>
-            <a href="https://wa.me/51931088900" target="_blank"
-              ><i class="fab fa-whatsapp fa-2x"></i
-            ></a>
+            <a
+              href="https://github.com/Alons08"
+              target="_blank"
+              class="social-btn github"
+            >
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a
+              href="https://linkedin.com/in/tuperfil"
+              target="_blank"
+              class="social-btn linkedin"
+            >
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
           </div>
         </div>
       </div>
@@ -170,43 +172,6 @@
               </div>
             </div>
           </div>
-          <!-- Proyecto 5 -->
-          <div class="project-card">
-            <div class="project-img">
-              <img
-                src="https://via.placeholder.com/400x250"
-                alt="App de Recargas"
-              />
-            </div>
-            <div class="project-info">
-              <h3>App para Venta de Recargas</h3>
-              <p>
-                Desarrollado en Pickalo. Reportes PDF y seguimiento de
-                ganancias.
-              </p>
-              <div class="project-links">
-                <a href="#" class="btn-small">Demo</a>
-                <a href="#" class="btn-small btn-outline">Código</a>
-              </div>
-            </div>
-          </div>
-          <!-- Proyecto 6 -->
-          <div class="project-card">
-            <div class="project-img">
-              <img
-                src="https://via.placeholder.com/400x250"
-                alt="Dashboard Analytics"
-              />
-            </div>
-            <div class="project-info">
-              <h3>Dashboard Analytics</h3>
-              <p>Python + Django. Visualización de datos en tiempo real.</p>
-              <div class="project-links">
-                <a href="#" class="btn-small">Demo</a>
-                <a href="#" class="btn-small btn-outline">Código</a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -215,28 +180,56 @@
     <section id="contact" class="section bg-light">
       <div class="container">
         <h2>Contacto</h2>
-        <form class="contact-form">
-          <div class="form-group">
-            <input type="text" placeholder="Nombre" required />
+        <div class="contact-container">
+          <div class="contact-form-container">
+            <form class="contact-form">
+              <div class="form-group">
+                <input type="text" placeholder="Nombre" required />
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Email" required />
+              </div>
+              <div class="form-group">
+                <input type="tel" placeholder="Número de celular" required />
+              </div>
+              <div class="form-group">
+                <textarea placeholder="Tu mensaje" required></textarea>
+              </div>
+              <button type="submit" class="btn">Enviar Mensaje</button>
+            </form>
           </div>
-          <div class="form-group">
-            <input type="email" placeholder="Email" required />
+          <div class="contact-info">
+            <h3>¿Prefieres contactarme directamente?</h3>
+            <p>Estoy disponible para ayudarte. No dudes en escribirme:</p>
+            <div class="direct-contact">
+              <a
+                href="https://wa.me/51931088900"
+                target="_blank"
+                class="contact-method whatsapp"
+              >
+                <i class="fab fa-whatsapp"></i>
+                <span>+51 931 088 900</span>
+              </a>
+              <a
+                href="mailto:alonsoleandro.dev@gmail.com"
+                class="contact-method email"
+              >
+                <i class="fas fa-envelope"></i>
+                <span>alonsoleandro.dev@gmail.com</span>
+              </a>
+            </div>
+            <p class="contact-note">
+              Responderé lo antes posible. ¡Espero saber de ti!
+            </p>
           </div>
-          <div class="form-group">
-            <input type="tel" placeholder="Número de celular" required />
-          </div>
-          <div class="form-group">
-            <textarea placeholder="Mensaje" required></textarea>
-          </div>
-          <button type="submit" class="btn">Enviar Mensaje</button>
-        </form>
+        </div>
       </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
-        <p>&copy; 2024 Alonso Quispe. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Alonso Leandro. Todos los derechos reservados.</p>
       </div>
     </footer>
 

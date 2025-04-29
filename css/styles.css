@@ -22,7 +22,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: var(--light-color);
   color: var(--text-color);
   line-height: 1.6;
@@ -98,7 +98,11 @@ body {
   height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   text-align: center;
   padding-top: 80px;
@@ -146,7 +150,7 @@ body {
 }
 
 .section h2::after {
-  content: '';
+  content: "";
   display: block;
   width: 80px;
   height: 4px;
@@ -260,7 +264,7 @@ body {
   padding: 1rem;
   border: 1px solid #ddd;
   border-radius: 5px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .form-group textarea {
