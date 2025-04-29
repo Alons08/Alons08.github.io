@@ -1,103 +1,178 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mi Portafolio</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-</head>
-<body>
-  <header>
-    <h1>Alonso Ariam Leandro Quispe</h1>
-    <p class="description">Desarrollador Backend (Java/Spring Boot)</p>
-  </header>
-
-  <section id="about">
-    <div class="container">
-      <h2>Sobre mí</h2>
-      <p>Desarrollador backend destacado por crear soluciones que mejoran la eficiencia. Mi trayectoria única —desde la construcción hasta el desarrollo de software— demuestra adaptabilidad y enfoque en resultados. Busco proyectos desafiantes donde aportar valor con soluciones técnicas escalables.</p>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="container">
-      <h2>Mis Proyectos</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>Sistema de Matrículas Escolares</h3>
-          <p>Spring Boot, Angular y MySQL para Colegio San Silvestre de Paul. Gestión de 200+ matrículas anuales. Reducción de errores en un 12%.</p>
-          <a href="#" target="_blank">Ver Proyecto</a>
-        </div>
-        <div class="project-card">
-          <h3>Sistema de Gestión Bibliotecaria</h3>
-          <p>Java y MySQL. Administra préstamos, devoluciones y multas. Búsqueda de libros optimizada en un 15%.</p>
-          <a href="#" target="_blank">Ver Proyecto</a>
-        </div>
-        <div class="project-card">
-          <h3>Tienda Virtual KingsMan</h3>
-          <p>HTML, CSS y JavaScript. Carrito de compras y gestión de productos. Mejora UX mediante validaciones dinámicas.</p>
-          <a href="#" target="_blank">Ver Proyecto</a>
-        </div>
-        <div class="project-card">
-          <h3>Sistema de Distribución Hídrica</h3>
-          <p>Spring Boot y Azure para Chinecas. Mejora la distribución de agua y beneficia a más de 100 agricultores. Scrum.</p>
-          <a href="#" target="_blank">Ver Proyecto</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alonso Quispe | Backend Developer</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="#" class="logo">Alonso<span>Dev</span></a>
+        <ul class="nav-links">
+          <li><a href="#about">Sobre mí</a></li>
+          <li><a href="#skills">Habilidades</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </button>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
         </div>
       </div>
-    </div>
-  </section>
+    </nav>
 
-  <section id="experience">
-    <div class="container">
-      <h2>Experiencia</h2>
-      <ul>
-        <li>
-          <strong>Colegio San Silvestre de Paul</strong> - Desarrollador Full Stack<br />
-          <small>mar 2025 – Actualidad</small><br />
-          Gestión de matrículas escolares, validaciones automatizadas.
-        </li>
-        <li>
-          <strong>Pickalo</strong> - Desarrollador Full Stack<br />
-          <small>feb 2024 – abr 2024</small><br />
-          App para ventas de recargas, reportes PDF y seguimiento de ganancias (+18% eficiencia).
-        </li>
-        <li>
-          <strong>Proyecto Especial Chinecas</strong> - Desarrollador Backend<br />
-          <small>ago 2023 – dic 2023</small><br />
-          Web para distribución hídrica con Azure. Scrum. Beneficio directo a agricultores.
-        </li>
-      </ul>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="container">
+        <h1>Alonso Ariam Leandro Quispe</h1>
+        <p class="subtitle">
+          Desarrollador Backend <span>(Java/Spring Boot)</span>
+        </p>
+        <a href="#projects" class="btn">Ver Proyectos</a>
+      </div>
+    </header>
 
-  <section id="education">
-    <div class="container">
-      <h2>Educación</h2>
-      <p><strong>Universidad Tecnológica del Perú</strong> – Ingeniería de Sistemas e Informática<br />mar 2021 – actualidad</p>
-    </div>
-  </section>
+    <!-- Sobre Mí -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>Sobre mí</h2>
+        <div class="about-content">
+          <p>
+            Desarrollador backend con experiencia en soluciones escalables y
+            eficientes. Mi enfoque combina buenas prácticas de código limpio,
+            arquitectura de software y metodologías ágiles para entregar
+            productos de alta calidad.
+          </p>
+          <div class="social-links">
+            <a href="https://github.com/Alons08" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="https://linkedin.com/in/tuperfil" target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="mailto:alonsoleandro.dev@gmail.com"
+              ><i class="fas fa-envelope"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section id="additional">
-    <div class="container">
-      <h2>Información Adicional</h2>
-      <ul>
-        <li>🏆 1er puesto en Concurso de Programación UTP 2023</li>
-        <li>🎮 Coach profesional de Clash Royale (México, España, Colombia, Puerto Rico)</li>
-      </ul>
-    </div>
-  </section>
+    <!-- Habilidades -->
+    <section id="skills" class="section bg-light">
+      <div class="container">
+        <h2>Mis Habilidades</h2>
+        <div class="skills-grid">
+          <div class="skill">
+            <h3>Java</h3>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="90%"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <h3>Spring Boot</h3>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="85%"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <h3>MySQL</h3>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="80%"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <h3>Git</h3>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="75%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    <p>
-      📧 <a href="mailto:alonsoleandro.dev@gmail.com">alonsoleandro.dev@gmail.com</a> | 
-      📞 <a href="tel:+51931088900">+51 931 088 900</a> | 
-      🐙 <a href="https://github.com/Alons08" target="_blank">GitHub</a>
-    </p>
-  </footer>  
+    <!-- Proyectos -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Mis Proyectos</h2>
+        <div class="projects-grid">
+          <!-- Proyecto 1 -->
+          <div class="project-card">
+            <div class="project-img">
+              <img
+                src="https://via.placeholder.com/400x250"
+                alt="Sistema de Matrículas"
+              />
+            </div>
+            <div class="project-info">
+              <h3>Sistema de Matrículas Escolares</h3>
+              <p>Spring Boot, Angular y MySQL para gestión de matrículas.</p>
+              <div class="project-links">
+                <a href="#" class="btn-small">Demo</a>
+                <a href="#" class="btn-small btn-outline">Código</a>
+              </div>
+            </div>
+          </div>
+          <!-- Proyecto 2 -->
+          <div class="project-card">
+            <div class="project-img">
+              <img
+                src="https://via.placeholder.com/400x250"
+                alt="Gestión Bibliotecaria"
+              />
+            </div>
+            <div class="project-info">
+              <h3>Sistema de Gestión Bibliotecaria</h3>
+              <p>Java y MySQL para administración de préstamos.</p>
+              <div class="project-links">
+                <a href="#" class="btn-small">Demo</a>
+                <a href="#" class="btn-small btn-outline">Código</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <script src="js/script.js"></script>
-</body>
+    <!-- Contacto -->
+    <section id="contact" class="section bg-light">
+      <div class="container">
+        <h2>Contacto</h2>
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Nombre" required />
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Email" required />
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Mensaje" required></textarea>
+          </div>
+          <button type="submit" class="btn">Enviar Mensaje</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 Alonso Quispe. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
 </html>
