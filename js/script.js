@@ -74,50 +74,6 @@ menuToggle.addEventListener('click', () => {
     : '<i class="fas fa-bars"></i>';
 });
 
-// Efecto de olas dinámico
-function initWaveAnimation() {
-  const waves = {
-    top: document.querySelector('.wave-top'),
-    middle: document.querySelector('.wave-middle'),
-    bottom: document.querySelector('.wave-bottom')
-  };
-  
-  // Parámetros de animación
-  const waveParams = {
-    speed: 0.5, // Velocidad base
-    amplitude: 50, // Rango de movimiento horizontal
-    heightVariation: 0.2, // Variación de altura
-    layers: {
-      top: { speedMultiplier: 1.2, scale: 1.0 },
-      middle: { speedMultiplier: 0.8, scale: 1.1 },
-      bottom: { speedMultiplier: 0.6, scale: 0.9 }
-    }
-  };
-  
-  let time = 0;
-  
-  function animateWaves() {
-    time += 0.005;
-    
-    // Animar cada capa de olas con parámetros diferentes
-    Object.keys(waves).forEach(layer => {
-      const wave = waves[layer];
-      if (wave) {
-        const params = waveParams.layers[layer];
-        const speed = waveParams.speed * params.speedMultiplier;
-        const offset = Math.sin(time * speed) * waveParams.amplitude;
-        const scaleY = 1 + (Math.sin(time * speed * 1.5) * waveParams.heightVariation * params.scale);
-        
-        wave.style.transform = `translateX(${offset}px) scaleY(${scaleY})`;
-      }
-    });
-    
-    requestAnimationFrame(animateWaves);
-  }
-  
-  animateWaves();
-}
-
 // Animaciones al hacer scroll
 function animateOnScroll() {
   const animatableElements = document.querySelectorAll(
@@ -151,7 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Inicializar componentes
   initTheme();
   setupAnimations();
-  initWaveAnimation();
   
   // Animación inicial
   setTimeout(() => {
