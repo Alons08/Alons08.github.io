@@ -1,238 +1,205 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alonso Quispe | Backend Developer</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <!-- Barra de navegación -->
-    <nav class="navbar">
-      <div class="container">
-        <a href="#" class="logo">Alonso<span>Dev</span></a>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#about">Sobre mí</a></li>
-          <li><a href="#skills">Habilidades</a></li>
-          <li><a href="#projects">Proyectos</a></li>
-          <li><a href="#contact">Contacto</a></li>
-        </ul>
-        <button id="theme-toggle" class="theme-toggle">
-          <i class="fas fa-moon"></i>
-        </button>
-        <div class="menu-toggle" id="menuToggle">
-          <i class="fas fa-bars"></i>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alonso Quispe | Backend Developer</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">Alonso<span>Dev</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#skills">Habilidades</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+      <button id="theme-toggle" class="theme-toggle">
+        <i class="fas fa-moon"></i>
+      </button>
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-      <div class="container">
-        <h1>Alonso Ariam Leandro Quispe</h1>
-        <p class="subtitle">
-          Desarrollador Backend <span>(Java/Spring Boot)</span>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container">
+      <h1>Alonso Ariam Leandro Quispe</h1>
+      <p class="subtitle">Desarrollador Backend <span>(Java/Spring Boot)</span></p>
+      <a href="#projects" class="btn">Ver Proyectos</a>
+    </div>
+  </header>
+
+  <!-- Sobre Mí -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>Sobre mí</h2>
+      <div class="about-content">
+        <p>
+          Desarrollador backend especializado en crear soluciones robustas y escalables. 
+          Apasionado por la arquitectura de software limpia y eficiente, con experiencia 
+          en el desarrollo de APIs RESTful y microservicios.
         </p>
-        <a href="#projects" class="btn">Ver Proyectos</a>
-      </div>
-    </header>
-
-    <!-- Sobre Mí -->
-    <section id="about" class="section">
-      <div class="container">
-        <h2>Sobre mí</h2>
-        <div class="about-content">
-          <p>
-            Desarrollador backend con experiencia en soluciones escalables y
-            eficientes. Mi enfoque combina buenas prácticas de código limpio,
-            arquitectura de software y metodologías ágiles para entregar
-            productos de alta calidad.
-          </p>
-          <div class="social-links">
-            <a
-              href="https://github.com/Alons08"
-              target="_blank"
-              class="social-btn github"
-            >
-              <i class="fab fa-github"></i> GitHub
-            </a>
-            <a
-              href="https://linkedin.com/in/tuperfil"
-              target="_blank"
-              class="social-btn linkedin"
-            >
-              <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Habilidades -->
-    <section id="skills" class="section bg-light">
-      <div class="container">
-        <h2>Mis Habilidades</h2>
-        <div class="skills-chips">
-          <span class="chip">Java</span>
-          <span class="chip">Spring Boot</span>
-          <span class="chip">MySQL</span>
-          <span class="chip">Git</span>
-          <span class="chip">API REST</span>
-          <span class="chip">Docker</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Proyectos -->
-    <section id="projects" class="section">
-      <div class="container">
-        <h2>Mis Proyectos</h2>
-        <div class="projects-grid">
-          <!-- Proyecto 1 -->
-          <div class="project-card">
-            <div class="project-img">
-              <img
-                src="https://via.placeholder.com/400x250"
-                alt="Sistema de Matrículas"
-              />
-            </div>
-            <div class="project-info">
-              <h3>Sistema de Matrículas Escolares</h3>
-              <p>
-                Spring Boot, Angular y MySQL para Colegio San Silvestre de Paul.
-              </p>
-              <div class="project-links">
-                <a href="#" class="btn-small">Demo</a>
-                <a href="#" class="btn-small btn-outline">Código</a>
-              </div>
+        <div class="social-links">
+          <div class="social-card github">
+            <i class="fab fa-github"></i>
+            <div class="social-info">
+              <span class="social-label">GitHub</span>
+              <a href="https://github.com/Alons08" target="_blank" class="social-username">@Alons08</a>
             </div>
           </div>
-          <!-- Proyecto 2 -->
-          <div class="project-card">
-            <div class="project-img">
-              <img
-                src="https://via.placeholder.com/400x250"
-                alt="Gestión Bibliotecaria"
-              />
-            </div>
-            <div class="project-info">
-              <h3>Sistema de Gestión Bibliotecaria</h3>
-              <p>Java y MySQL. Administra préstamos, devoluciones y multas.</p>
-              <div class="project-links">
-                <a href="#" class="btn-small">Demo</a>
-                <a href="#" class="btn-small btn-outline">Código</a>
-              </div>
-            </div>
-          </div>
-          <!-- Proyecto 3 -->
-          <div class="project-card">
-            <div class="project-img">
-              <img
-                src="https://via.placeholder.com/400x250"
-                alt="Tienda Virtual"
-              />
-            </div>
-            <div class="project-info">
-              <h3>Tienda Virtual KingsMan</h3>
-              <p>
-                HTML, CSS y JavaScript. Carrito de compras y gestión de
-                productos.
-              </p>
-              <div class="project-links">
-                <a href="#" class="btn-small">Demo</a>
-                <a href="#" class="btn-small btn-outline">Código</a>
-              </div>
-            </div>
-          </div>
-          <!-- Proyecto 4 -->
-          <div class="project-card">
-            <div class="project-img">
-              <img
-                src="https://via.placeholder.com/400x250"
-                alt="Distribución Hídrica"
-              />
-            </div>
-            <div class="project-info">
-              <h3>Sistema de Distribución Hídrica</h3>
-              <p>
-                Spring Boot y Azure para Chinecas. Mejora la distribución de
-                agua.
-              </p>
-              <div class="project-links">
-                <a href="#" class="btn-small">Demo</a>
-                <a href="#" class="btn-small btn-outline">Código</a>
-              </div>
+          <div class="social-card linkedin">
+            <i class="fab fa-linkedin-in"></i>
+            <div class="social-info">
+              <span class="social-label">LinkedIn</span>
+              <a href="https://linkedin.com/in/tuperfil" target="_blank" class="social-username">alonso-quispe</a>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Contacto -->
-    <section id="contact" class="section bg-light">
-      <div class="container">
-        <h2>Contacto</h2>
-        <div class="contact-container">
-          <div class="contact-form-container">
-            <form class="contact-form">
-              <div class="form-group">
-                <input type="text" placeholder="Nombre" required />
-              </div>
-              <div class="form-group">
-                <input type="email" placeholder="Email" required />
-              </div>
-              <div class="form-group">
-                <input type="tel" placeholder="Número de celular" required />
-              </div>
-              <div class="form-group">
-                <textarea placeholder="Tu mensaje" required></textarea>
-              </div>
-              <button type="submit" class="btn">Enviar Mensaje</button>
-            </form>
+  <!-- Habilidades -->
+  <section id="skills" class="section bg-light">
+    <div class="container">
+      <h2>Mis Habilidades</h2>
+      <div class="skills-chips">
+        <span class="chip">Java</span>
+        <span class="chip">Spring Boot</span>
+        <span class="chip">MySQL</span>
+        <span class="chip">Git</span>
+        <span class="chip">API REST</span>
+        <span class="chip">Docker</span>
+        <span class="chip">Microservicios</span>
+        <span class="chip">AWS</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyectos -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Mis Proyectos</h2>
+      <div class="projects-grid">
+        <!-- Proyecto 1 -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="https://via.placeholder.com/400x250/6c63ff/ffffff?text=Sistema+Matrículas" alt="Sistema de Matrículas">
           </div>
-          <div class="contact-info">
-            <h3>¿Prefieres contactarme directamente?</h3>
-            <p>Estoy disponible para ayudarte. No dudes en escribirme:</p>
-            <div class="direct-contact">
-              <a
-                href="https://wa.me/51931088900"
-                target="_blank"
-                class="contact-method whatsapp"
-              >
-                <i class="fab fa-whatsapp"></i>
-                <span>+51 931 088 900</span>
-              </a>
-              <a
-                href="mailto:alonsoleandro.dev@gmail.com"
-                class="contact-method email"
-              >
-                <i class="fas fa-envelope"></i>
-                <span>alonsoleandro.dev@gmail.com</span>
-              </a>
+          <div class="project-info">
+            <h3>Sistema de Matrículas Escolares</h3>
+            <p>Plataforma completa para gestión de matrículas con Spring Boot y Angular.</p>
+            <div class="project-links">
+              <a href="#" class="btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>
+              <a href="#" class="btn-small btn-outline"><i class="fab fa-github"></i> Código</a>
             </div>
-            <p class="contact-note">
-              Responderé lo antes posible. ¡Espero saber de ti!
+          </div>
+        </div>
+        <!-- Proyecto 2 -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="https://via.placeholder.com/400x250/4d44db/ffffff?text=Biblioteca" alt="Gestión Bibliotecaria">
+          </div>
+          <div class="project-info">
+            <h3>Sistema Bibliotecario</h3>
+            <p>Solución completa para gestión de préstamos y devoluciones de libros.</p>
+            <div class="project-links">
+              <a href="#" class="btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>
+              <a href="#" class="btn-small btn-outline"><i class="fab fa-github"></i> Código</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contact" class="section bg-light">
+    <div class="container">
+      <h2>Contacto</h2>
+      <div class="contact-container">
+        <div class="contact-form-container">
+          <form class="contact-form">
+            <h3>Enviame un mensaje</h3>
+            <p>¿Tienes un proyecto en mente? Hablemos sobre cómo puedo ayudarte.</p>
+            
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input type="text" id="name" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="tu@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Teléfono</label>
+              <input type="tel" id="phone" placeholder="+51 123 456 789" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Mensaje</label>
+              <textarea id="message" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+            </div>
+            <button type="submit" class="btn">
+              <i class="fas fa-paper-plane"></i> Enviar Mensaje
+            </button>
+          </form>
+        </div>
+        
+        <div class="contact-info">
+          <div class="contact-card">
+            <h3>Contacto directo</h3>
+            <p class="contact-description">
+              Prefieres comunicarte directamente? Estoy disponible para colaboraciones y oportunidades.
             </p>
+            
+            <div class="contact-methods">
+              <div class="contact-item whatsapp">
+                <div class="contact-icon">
+                  <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="contact-details">
+                  <span class="contact-label">WhatsApp</span>
+                  <a href="https://wa.me/51931088900" target="_blank" class="contact-value">+51 931 088 900</a>
+                </div>
+              </div>
+              
+              <div class="contact-item email">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
+                  <span class="contact-label">Email</span>
+                  <a href="mailto:alonsoleandro.dev@gmail.com" class="contact-value">alonsoleandro.dev@gmail.com</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="contact-hours">
+              <h4>Horario de disponibilidad</h4>
+              <p>Lunes a Viernes: 9:00 am - 6:00 pm</p>
+              <p>Responderé en menos de 24 horas</p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <p>&copy; 2024 Alonso Leandro. Todos los derechos reservados.</p>
-      </div>
-    </footer>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Alonso Quispe. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
-    <script src="js/script.js"></script>
-  </body>
+  <script src="js/script.js"></script>
+</body>
 </html>
