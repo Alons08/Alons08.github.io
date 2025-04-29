@@ -141,8 +141,8 @@ body {
 
 /* Estilos para la foto de perfil */
 .profile-pic-container {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   margin: 0 auto 2rem;
   position: relative;
   animation: fadeInUp 1s ease 0.1s forwards;
@@ -154,7 +154,7 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid white;
+  border: 6px solid white;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   transition: var(--transition);
 }
@@ -333,7 +333,7 @@ body {
 /* Proyectos */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2.5rem;
   margin-top: 3rem;
 }
@@ -353,7 +353,7 @@ body {
 }
 
 .project-img {
-  height: 220px;
+  height: 280px;
   overflow: hidden;
 }
 
@@ -636,8 +636,16 @@ body {
   }
 
   .profile-pic-container {
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-img {
+    height: 220px;
   }
 
   .section {
@@ -653,10 +661,6 @@ body {
     width: 100%;
     max-width: 280px;
   }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 480px) {
@@ -669,8 +673,8 @@ body {
   }
   
   .profile-pic-container {
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
   }
   
   .section h2 {
@@ -694,5 +698,9 @@ body {
   
   .contact-method i.fa-chevron-right {
     display: none;
+  }
+
+  .project-img {
+    height: 180px;
   }
 }
