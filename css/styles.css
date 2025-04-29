@@ -6,6 +6,7 @@
   --light-color: #f8f9fa;
   --text-color: #333;
   --text-light: #777;
+  --footer-text: white;
   --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
 }
@@ -15,6 +16,7 @@
   --light-color: #1e1e2c;
   --text-color: #f0f0f0;
   --text-light: #ccc;
+  --footer-text: #1e1e2c;
 }
 
 * {
@@ -569,10 +571,10 @@ body {
   text-align: center;
   padding: 2.5rem 0;
   background-color: var(--dark-color);
-  color: white;
 }
 
-.footer p {
+.footer-text {
+  color: var(--footer-text);
   font-size: 0.9rem;
 }
 
