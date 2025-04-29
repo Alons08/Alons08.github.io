@@ -12,6 +12,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       // Cerrar menú móvil si está abierto
       if (navLinks.classList.contains('active')) {
         navLinks.classList.remove('active');
+        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
       }
     }
   });
@@ -25,7 +26,12 @@ const body = document.body;
 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
 // Establecer tema inicial
-if (prefersDarkScheme.matches) {
+if (localStorage.getItem('theme')) {
+  body.setAttribute('data-theme', localStorage.getItem('theme'));
+  themeToggle.innerHTML = localStorage.getItem('theme') === 'dark' 
+    ? '<i class="fas fa-sun"></i>' 
+    : '<i class="fas fa-moon"></i>';
+} else if (prefersDarkScheme.matches) {
   body.setAttribute('data-theme', 'dark');
   themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
 } else {
@@ -83,15 +89,6 @@ document.querySelectorAll('.project-card, .contact-item, .social-card').forEach(
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Portafolio cargado 🚀');
   
-  // Verificar tema guardado
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    body.setAttribute('data-theme', savedTheme);
-    themeToggle.innerHTML = savedTheme === 'dark' 
-      ? '<i class="fas fa-sun"></i>' 
-      : '<i class="fas fa-moon"></i>';
-  }
-  
   // Animación inicial
   setTimeout(() => {
     animateOnScroll();
@@ -101,23 +98,29 @@ document.addEventListener('DOMContentLoaded', () => {
 // Animación al hacer scroll
 window.addEventListener('scroll', animateOnScroll);
 
-// Validación de formulario
-const contactForm = document.querySelector('.contact-form');
+// Formulario de contacto
+const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
-    // Validación básica
-    const name = contactForm.querySelector('#name').value;
-    const email = contactForm.querySelector('#email').value;
-    const message = contactForm.querySelector('#message').value;
-    
-    if (name && email && message) {
-      // Simular envío
-      alert('¡Mensaje enviado con éxito! Te responderé lo antes posible.');
-      contactForm.reset();
-    } else {
-      alert('Por favor completa todos los campos requeridos.');
+    // Obtener datos del formulario
+    const formData = new FormData(contactForm);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+
+    // Validar campos
+    if (!name || !email || !message) {
+      alert('Por favor, completa todos los campos.');
+      return;
     }
+
+    // Simular envío (puedes reemplazar esto con una integración real)
+    console.log('Formulario enviado:', { name, email, message });
+    alert('Gracias por contactarme. Me pondré en contacto contigo pronto.');
+
+    // Limpiar formulario
+    contactForm.reset();
   });
 }

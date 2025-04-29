@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alonso Leandro</title>
+  <title>Alonso Leandro | Backend Developer</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -28,9 +28,16 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero Section con efecto de olas -->
   <header class="hero">
-    <div class="container">
+    <div class="waves">
+      <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+      </svg>
+    </div>
+    <div class="container hero-content">
       <h1>Hola, soy Alonso Leandro</h1>
       <p class="subtitle">Desarrollador web especializado en back-end y estudiante de Ingeniería de Sistemas</p>
       <a href="#projects" class="btn">Ver Proyectos</a>
@@ -46,20 +53,20 @@
           Hola, soy Alonso Ariam Leandro Quispe, desarrollador web con vocación por la innovación y el aprendizaje continuo. Actualmente curso el 9.º ciclo de Ingeniería de Sistemas en la UTP y me especializo en el framework Spring Boot. He ganado un concurso de programación, lo que reafirma mi pasión por resolver problemas de manera creativa y eficiente. He trabajado en equipos que valoran la calidad y la colaboración, siempre enfocados en soluciones digitales centradas en el usuario. ¡Estoy listo para nuevos desafíos! Conectemos y creemos algo extraordinario.
         </p>
         <div class="social-links">
-          <div class="social-card github">
+          <a href="https://github.com/Alons08" target="_blank" class="social-card github">
             <i class="fab fa-github"></i>
             <div class="social-info">
               <span class="social-label">GitHub</span>
-              <a href="https://github.com/Alons08" target="_blank" class="social-username">@Alons08</a>
+              <span class="social-username">@Alons08</span>
             </div>
-          </div>
-          <div class="social-card linkedin">
+          </a>
+          <a href="https://linkedin.com/in/tuperfil" target="_blank" class="social-card linkedin">
             <i class="fab fa-linkedin-in"></i>
             <div class="social-info">
               <span class="social-label">LinkedIn</span>
-              <a href="https://linkedin.com/in/tuperfil" target="_blank" class="social-username">alonso-leandro</a>
+              <span class="social-username">alonso-quispe</span>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -71,18 +78,14 @@
       <h2>Mis Habilidades</h2>
       <div class="skills-chips">
         <span class="chip">Java</span>
-        <span class="chip">Python</span>
         <span class="chip">Spring Boot</span>
-        <span class="chip">HTML</span>
-        <span class="chip">CSS</span>
-        <span class="chip">JavaScript</span>
         <span class="chip">MySQL</span>
         <span class="chip">SQL Server</span>
         <span class="chip">Git</span>
-        <span class="chip">GitHub</span>
-        <span class="chip">Docker</span>
+        <span class="chip">GitHubT</span>
         <span class="chip">Postman</span>
         <span class="chip">Azure</span>
+        <span class="chip">Docker</span>
       </div>
     </div>
   </section>
@@ -124,31 +127,33 @@
     </div>
   </section>
 
-  <!-- Contacto -->
+  <!-- Contacto con formulario funcional -->
   <section id="contact" class="section bg-light">
     <div class="container">
       <h2>Contacto</h2>
       <div class="contact-container">
         <div class="contact-form-container">
-          <form class="contact-form">
+          <form class="contact-form" id="contactForm" action="https://formsubmit.co/alonsoleandro.dev@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://alons08.github.io/thanks.html">
             <h3>Enviame un mensaje</h3>
             <p>¿Tienes un proyecto en mente? Hablemos sobre cómo puedo ayudarte.</p>
             
             <div class="form-group">
               <label for="name">Nombre</label>
-              <input type="text" id="name" placeholder="Tu nombre" required>
+              <input type="text" id="name" name="name" placeholder="Tu nombre" required>
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" id="email" placeholder="tu@email.com" required>
+              <input type="email" id="email" name="email" placeholder="tu@email.com" required>
             </div>
             <div class="form-group">
               <label for="phone">Teléfono</label>
-              <input type="tel" id="phone" placeholder="+51 123 456 789" required>
+              <input type="tel" id="phone" name="phone" placeholder="+51 123 456 789">
             </div>
             <div class="form-group">
               <label for="message">Mensaje</label>
-              <textarea id="message" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+              <textarea id="message" name="message" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
             </div>
             <button type="submit" class="btn">
               <i class="fas fa-paper-plane"></i> Enviar Mensaje
@@ -160,35 +165,35 @@
           <div class="contact-card">
             <h3>Contacto directo</h3>
             <p class="contact-description">
-              Prefieres comunicarte directamente? Estoy disponible para colaboraciones y oportunidades.
+              ¿Prefieres comunicarte directamente? Estoy disponible para colaboraciones y oportunidades.
             </p>
             
             <div class="contact-methods">
-              <div class="contact-item whatsapp">
+              <a href="https://wa.me/51931088900" target="_blank" class="contact-item whatsapp">
                 <div class="contact-icon">
                   <i class="fab fa-whatsapp"></i>
                 </div>
                 <div class="contact-details">
                   <span class="contact-label">WhatsApp</span>
-                  <a href="https://wa.me/51931088900" target="_blank" class="contact-value">+51 931 088 900</a>
+                  <span class="contact-value">+51 931 088 900</span>
                 </div>
-              </div>
+              </a>
               
-              <div class="contact-item email">
+              <a href="mailto:alonsoleandro.dev@gmail.com" class="contact-item email">
                 <div class="contact-icon">
                   <i class="fas fa-envelope"></i>
                 </div>
                 <div class="contact-details">
                   <span class="contact-label">Email</span>
-                  <a href="mailto:alonsoleandro.dev@gmail.com" class="contact-value">alonsoleandro.dev@gmail.com</a>
+                  <span class="contact-value">alonsoleandro.dev@gmail.com</span>
                 </div>
-              </div>
+              </a>
             </div>
             
             <div class="contact-hours">
               <h4>Horario de disponibilidad</h4>
-              <p>Lunes a Viernes: 9:00 am - 11:00 pm</p>
-              <p>Responderé en menos de 3 horas</p>
+              <p>Lunes a Viernes: 9:00 am - 6:00 pm</p>
+              <p>Responderé en menos de 24 horas</p>
             </div>
           </div>
         </div>
