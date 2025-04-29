@@ -74,20 +74,54 @@ menuToggle.addEventListener('click', () => {
     : '<i class="fas fa-bars"></i>';
 });
 
-// Cerrar menú al hacer clic en un enlace (para móviles)
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    if (window.innerWidth <= 768) {
-      navLinks.classList.remove('active');
-      menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+// Efecto de olas dinámico
+function initWaveAnimation() {
+  const waves = {
+    top: document.querySelector('.wave-top'),
+    middle: document.querySelector('.wave-middle'),
+    bottom: document.querySelector('.wave-bottom')
+  };
+  
+  // Parámetros de animación
+  const waveParams = {
+    speed: 0.5, // Velocidad base
+    amplitude: 50, // Rango de movimiento horizontal
+    heightVariation: 0.2, // Variación de altura
+    layers: {
+      top: { speedMultiplier: 1.2, scale: 1.0 },
+      middle: { speedMultiplier: 0.8, scale: 1.1 },
+      bottom: { speedMultiplier: 0.6, scale: 0.9 }
     }
-  });
-});
+  };
+  
+  let time = 0;
+  
+  function animateWaves() {
+    time += 0.005;
+    
+    // Animar cada capa de olas con parámetros diferentes
+    Object.keys(waves).forEach(layer => {
+      const wave = waves[layer];
+      if (wave) {
+        const params = waveParams.layers[layer];
+        const speed = waveParams.speed * params.speedMultiplier;
+        const offset = Math.sin(time * speed) * waveParams.amplitude;
+        const scaleY = 1 + (Math.sin(time * speed * 1.5) * waveParams.heightVariation * params.scale);
+        
+        wave.style.transform = `translateX(${offset}px) scaleY(${scaleY})`;
+      }
+    });
+    
+    requestAnimationFrame(animateWaves);
+  }
+  
+  animateWaves();
+}
 
 // Animaciones al hacer scroll
 function animateOnScroll() {
   const animatableElements = document.querySelectorAll(
-    '.project-card, .contact-item, .social-card, .section h2, .section p, .skills-chips'
+    '.project-card, .contact-card, .social-card, .section h2, .section p, .skills-chips'
   );
   
   animatableElements.forEach(element => {
@@ -104,95 +138,19 @@ function animateOnScroll() {
 // Configurar animaciones iniciales
 function setupAnimations() {
   document.querySelectorAll(
-    '.project-card, .contact-item, .social-card, .section h2, .section p, .skills-chips'
+    '.project-card, .contact-card, .social-card, .section h2, .section p, .skills-chips'
   ).forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'all 0.6s ease';
   });
-  
-  // Forzar repintado para activar transiciones
-  setTimeout(() => {
-    document.querySelector('body').style.visibility = 'visible';
-  }, 100);
-}
-
-// Efecto de olas dinámico
-function initWaveAnimation() {
-  const waves = document.querySelectorAll('.wave');
-  let time = 0;
-  
-  function animateWaves() {
-    time += 0.005;
-    
-    waves.forEach((wave, index) => {
-      const speed = 0.5 + (index * 0.1);
-      const offset = Math.sin(time * speed) * 50;
-      const scaleY = 0.8 + (Math.sin(time * speed + index) * 0.2);
-      
-      wave.style.transform = `translateX(${offset}px) scaleY(${scaleY})`;
-    });
-    
-    requestAnimationFrame(animateWaves);
-  }
-  
-  animateWaves();
-}
-
-// Manejo del formulario de contacto
-function setupContactForm() {
-  const contactForm = document.getElementById('contactForm');
-  
-  if (contactForm) {
-    contactForm.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      
-      const submitButton = this.querySelector('button[type="submit"]');
-      const originalButtonText = submitButton.innerHTML;
-      
-      try {
-        // Mostrar estado de carga
-        submitButton.disabled = true;
-        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-        
-        // Enviar formulario usando FormSubmit
-        const formData = new FormData(this);
-        const response = await fetch(this.action, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-        
-        if (response.ok) {
-          // Mostrar mensaje de éxito
-          alert('¡Mensaje enviado con éxito! Te responderé lo antes posible.');
-          contactForm.reset();
-        } else {
-          throw new Error('Error en el envío');
-        }
-      } catch (error) {
-        console.error('Error:', error);
-        alert('Hubo un error al enviar el mensaje. Por favor inténtalo nuevamente.');
-      } finally {
-        // Restaurar botón
-        submitButton.disabled = false;
-        submitButton.innerHTML = originalButtonText;
-      }
-    });
-  }
 }
 
 // Inicialización cuando el DOM está listo
 document.addEventListener('DOMContentLoaded', () => {
-  // Ocultar contenido inicialmente para evitar flashes
-  document.querySelector('body').style.visibility = 'hidden';
-  
   // Inicializar componentes
   initTheme();
   setupAnimations();
-  setupContactForm();
   initWaveAnimation();
   
   // Animación inicial
