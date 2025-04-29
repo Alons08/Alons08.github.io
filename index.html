@@ -19,7 +19,7 @@
     <nav class="navbar">
       <div class="container">
         <a href="#" class="logo">Alonso<span>Dev</span></a>
-        <ul class="nav-links">
+        <ul class="nav-links" id="navLinks">
           <li><a href="#about">Sobre mí</a></li>
           <li><a href="#skills">Habilidades</a></li>
           <li><a href="#projects">Proyectos</a></li>
@@ -28,7 +28,7 @@
         <button id="theme-toggle" class="theme-toggle">
           <i class="fas fa-moon"></i>
         </button>
-        <div class="menu-toggle">
+        <div class="menu-toggle" id="menuToggle">
           <i class="fas fa-bars"></i>
         </div>
       </div>
@@ -58,13 +58,16 @@
           </p>
           <div class="social-links">
             <a href="https://github.com/Alons08" target="_blank"
-              ><i class="fab fa-github"></i
+              ><i class="fab fa-github fa-2x"></i
             ></a>
             <a href="https://linkedin.com/in/tuperfil" target="_blank"
-              ><i class="fab fa-linkedin"></i
+              ><i class="fab fa-linkedin fa-2x"></i
             ></a>
             <a href="mailto:alonsoleandro.dev@gmail.com"
-              ><i class="fas fa-envelope"></i
+              ><i class="fas fa-envelope fa-2x"></i
+            ></a>
+            <a href="https://wa.me/51931088900" target="_blank"
+              ><i class="fab fa-whatsapp fa-2x"></i
             ></a>
           </div>
         </div>
@@ -75,31 +78,13 @@
     <section id="skills" class="section bg-light">
       <div class="container">
         <h2>Mis Habilidades</h2>
-        <div class="skills-grid">
-          <div class="skill">
-            <h3>Java</h3>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="90%"></div>
-            </div>
-          </div>
-          <div class="skill">
-            <h3>Spring Boot</h3>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85%"></div>
-            </div>
-          </div>
-          <div class="skill">
-            <h3>MySQL</h3>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="80%"></div>
-            </div>
-          </div>
-          <div class="skill">
-            <h3>Git</h3>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="75%"></div>
-            </div>
-          </div>
+        <div class="skills-chips">
+          <span class="chip">Java</span>
+          <span class="chip">Spring Boot</span>
+          <span class="chip">MySQL</span>
+          <span class="chip">Git</span>
+          <span class="chip">API REST</span>
+          <span class="chip">Docker</span>
         </div>
       </div>
     </section>
@@ -119,7 +104,9 @@
             </div>
             <div class="project-info">
               <h3>Sistema de Matrículas Escolares</h3>
-              <p>Spring Boot, Angular y MySQL para gestión de matrículas.</p>
+              <p>
+                Spring Boot, Angular y MySQL para Colegio San Silvestre de Paul.
+              </p>
               <div class="project-links">
                 <a href="#" class="btn-small">Demo</a>
                 <a href="#" class="btn-small btn-outline">Código</a>
@@ -136,7 +123,84 @@
             </div>
             <div class="project-info">
               <h3>Sistema de Gestión Bibliotecaria</h3>
-              <p>Java y MySQL para administración de préstamos.</p>
+              <p>Java y MySQL. Administra préstamos, devoluciones y multas.</p>
+              <div class="project-links">
+                <a href="#" class="btn-small">Demo</a>
+                <a href="#" class="btn-small btn-outline">Código</a>
+              </div>
+            </div>
+          </div>
+          <!-- Proyecto 3 -->
+          <div class="project-card">
+            <div class="project-img">
+              <img
+                src="https://via.placeholder.com/400x250"
+                alt="Tienda Virtual"
+              />
+            </div>
+            <div class="project-info">
+              <h3>Tienda Virtual KingsMan</h3>
+              <p>
+                HTML, CSS y JavaScript. Carrito de compras y gestión de
+                productos.
+              </p>
+              <div class="project-links">
+                <a href="#" class="btn-small">Demo</a>
+                <a href="#" class="btn-small btn-outline">Código</a>
+              </div>
+            </div>
+          </div>
+          <!-- Proyecto 4 -->
+          <div class="project-card">
+            <div class="project-img">
+              <img
+                src="https://via.placeholder.com/400x250"
+                alt="Distribución Hídrica"
+              />
+            </div>
+            <div class="project-info">
+              <h3>Sistema de Distribución Hídrica</h3>
+              <p>
+                Spring Boot y Azure para Chinecas. Mejora la distribución de
+                agua.
+              </p>
+              <div class="project-links">
+                <a href="#" class="btn-small">Demo</a>
+                <a href="#" class="btn-small btn-outline">Código</a>
+              </div>
+            </div>
+          </div>
+          <!-- Proyecto 5 -->
+          <div class="project-card">
+            <div class="project-img">
+              <img
+                src="https://via.placeholder.com/400x250"
+                alt="App de Recargas"
+              />
+            </div>
+            <div class="project-info">
+              <h3>App para Venta de Recargas</h3>
+              <p>
+                Desarrollado en Pickalo. Reportes PDF y seguimiento de
+                ganancias.
+              </p>
+              <div class="project-links">
+                <a href="#" class="btn-small">Demo</a>
+                <a href="#" class="btn-small btn-outline">Código</a>
+              </div>
+            </div>
+          </div>
+          <!-- Proyecto 6 -->
+          <div class="project-card">
+            <div class="project-img">
+              <img
+                src="https://via.placeholder.com/400x250"
+                alt="Dashboard Analytics"
+              />
+            </div>
+            <div class="project-info">
+              <h3>Dashboard Analytics</h3>
+              <p>Python + Django. Visualización de datos en tiempo real.</p>
               <div class="project-links">
                 <a href="#" class="btn-small">Demo</a>
                 <a href="#" class="btn-small btn-outline">Código</a>
@@ -157,6 +221,9 @@
           </div>
           <div class="form-group">
             <input type="email" placeholder="Email" required />
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Número de celular" required />
           </div>
           <div class="form-group">
             <textarea placeholder="Mensaje" required></textarea>
