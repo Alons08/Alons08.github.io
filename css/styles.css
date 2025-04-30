@@ -429,6 +429,7 @@ body {
 /* Contacto Directo Mejorado */
 .contact-section {
   background-color: rgba(108, 99, 255, 0.03);
+  padding: 4rem 0 !important;
 }
 
 .contact-container {
@@ -447,6 +448,64 @@ body {
 .contact-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(108, 99, 255, 0.1);
+}
+
+/* Versión compacta del contacto */
+.contact-card.compact {
+  padding: 1.5rem;
+}
+
+.contact-card.compact .contact-header {
+  background: none;
+  color: var(--text-color);
+  padding: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+.contact-card.compact .contact-header h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-card.compact .contact-header p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.contact-card.compact .contact-methods {
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.contact-card.compact .contact-method {
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  border-radius: 8px;
+}
+
+.contact-card.compact .contact-icon {
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+.contact-card.compact .contact-details h4 {
+  font-size: 1rem;
+}
+
+.contact-card.compact .contact-details p {
+  font-size: 0.9rem;
+}
+
+.contact-card.compact .contact-footer {
+  padding: 1rem 0 0 0;
+  border-top: 1px solid rgba(108, 99, 255, 0.1);
+  font-size: 0.8rem;
+}
+
+.contact-card.compact .contact-footer p {
+  margin-bottom: 0.5rem;
 }
 
 .contact-header {
@@ -704,5 +763,24 @@ body {
 
   .project-img {
     height: 180px;
+  }
+  
+  /* Ajustes adicionales para la versión compacta en móviles */
+  .contact-card.compact {
+    padding: 1rem;
+  }
+  
+  .contact-card.compact .contact-header {
+    padding-bottom: 1rem;
+  }
+  
+  .contact-card.compact .contact-method {
+    padding: 0.8rem;
+  }
+  
+  .contact-card.compact .contact-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
   }
 }
