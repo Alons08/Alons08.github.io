@@ -2,24 +2,25 @@
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
-    const targetId = this.getAttribute('href');
-    const targetElement = document.querySelector(targetId);
-    
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+
     if (targetElement) {
       // Cerrar menú móvil si está abierto
       if (navLinks.classList.contains('active')) {
         navLinks.classList.remove('active');
         menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
       }
-      
-      // Scroll suave al elemento objetivo
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+
+      // Ajustar desplazamiento para evitar que el título quede oculto
+      window.scrollTo({
+        top: targetElement.offsetTop - navbarHeight,
+        behavior: 'smooth'
       });
-      
+
       // Actualizar URL sin recargar la página
-      history.pushState(null, null, targetId);
+      history.pushState(null, null, `#${targetId}`);
     }
   });
 });
