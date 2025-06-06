@@ -207,7 +207,7 @@ body {
 
 .section {
   padding: 6rem 0;
-  scroll-margin-top: 90px; /* Ajusta según la altura de la navbar */
+  scroll-margin-top: 30px; /* Ajusta según la altura de la navbar */
 }
 
 .section h2 {
