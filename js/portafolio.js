@@ -30,20 +30,30 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
-// Verificar preferencia del sistema y tema guardado
+// Verificar preferencia del tema guardado y tiempo transcurrido
 function initTheme() {
   const savedTheme = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeTimestamp = localStorage.getItem('themeTimestamp');
   
-  // Prioridad: localStorage > preferencia del sistema > light por defecto
+  // Si hay un tema guardado pero ha pasado más de 2 horas (7200000 ms)
+  if (savedTheme && themeTimestamp) {
+    const now = new Date().getTime();
+    if (now - parseInt(themeTimestamp) > 7200000) {
+      // Han pasado más de 2 horas, resetear a modo día
+      localStorage.removeItem('theme');
+      localStorage.removeItem('themeTimestamp');
+      body.setAttribute('data-theme', 'light');
+      themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+      return;
+    }
+  }
+  
+  // Prioridad: localStorage > modo día por defecto
   if (savedTheme) {
     body.setAttribute('data-theme', savedTheme);
     themeToggle.innerHTML = savedTheme === 'dark' 
       ? '<i class="fas fa-sun"></i>' 
       : '<i class="fas fa-moon"></i>';
-  } else if (prefersDark) {
-    body.setAttribute('data-theme', 'dark');
-    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
   } else {
     body.setAttribute('data-theme', 'light');
     themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
@@ -61,9 +71,32 @@ themeToggle.addEventListener('click', () => {
     ? '<i class="fas fa-sun"></i>' 
     : '<i class="fas fa-moon"></i>';
   
-  // Guardar preferencia
-  localStorage.setItem('theme', newTheme);
+  // Guardar preferencia y timestamp solo si es modo noche
+  if (newTheme === 'dark') {
+    localStorage.setItem('theme', newTheme);
+    localStorage.setItem('themeTimestamp', new Date().getTime());
+  } else {
+    localStorage.removeItem('theme');
+    localStorage.removeItem('themeTimestamp');
+  }
 });
+
+// Verificar periódicamente si hay que resetear el tema
+function checkThemeReset() {
+  const savedTheme = localStorage.getItem('theme');
+  const themeTimestamp = localStorage.getItem('themeTimestamp');
+  
+  if (savedTheme === 'dark' && themeTimestamp) {
+    const now = new Date().getTime();
+    if (now - parseInt(themeTimestamp) > 7200000) { // 2 horas = 7200000 ms
+      // Resetear a modo día
+      body.setAttribute('data-theme', 'light');
+      themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+      localStorage.removeItem('theme');
+      localStorage.removeItem('themeTimestamp');
+    }
+  }
+}
 
 // Menú móvil
 const menuToggle = document.getElementById('menuToggle');
@@ -131,6 +164,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   setupAnimations();
   
+  // Verificar cada minuto si hay que resetear el tema
+  setInterval(checkThemeReset, 60000); // 60000 ms = 1 minuto
+  
   // Animación inicial
   setTimeout(() => {
     animateOnScroll();
@@ -142,8 +178,9 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('Portafolio cargado 🚀');
 });
 
-// Manejar cambios en la preferencia de color del sistema
+// Manejar cambios en la preferencia de color del sistema (opcional)
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+  // Solo si no hay tema guardado manualmente
   if (!localStorage.getItem('theme')) {
     body.setAttribute('data-theme', e.matches ? 'dark' : 'light');
     themeToggle.innerHTML = e.matches 
