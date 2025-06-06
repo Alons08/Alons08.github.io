@@ -164,8 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   setupAnimations();
   
-  // Verificar cada minuto si hay que resetear el tema
-  setInterval(checkThemeReset, 60000); // 60000 ms = 1 minuto
+  // Verificar cada minuto si hay que resetear el tema MINUTOS
+  setInterval(checkThemeReset, 300000); // 5min  ||  60000 ms = 1 minuto
   
   // Animación inicial
   setTimeout(() => {
