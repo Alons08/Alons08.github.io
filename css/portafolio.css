@@ -7,6 +7,7 @@
   --text-color: #333;
   --text-light: #777;
   --footer-text: white;
+  --footer-bg: #1e1e2c;
   --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
 }
@@ -16,7 +17,8 @@
   --light-color: #1e1e2c;
   --text-color: #f0f0f0;
   --text-light: #ccc;
-  --footer-text: #1e1e2c;
+  --footer-text: white;
+  --footer-bg: #1e1e2c;
 }
 
 * {
@@ -207,6 +209,7 @@ body {
 
 .section {
   padding: 6rem 0;
+  scroll-margin-top: 90px; /* Ajusta según la altura de la navbar */
 }
 
 .section h2 {
@@ -306,29 +309,36 @@ body {
 }
 
 /* Habilidades */
-.skills-chips {
+.skills-icons {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
   justify-content: center;
+  gap: 2rem;
   max-width: 800px;
   margin: 0 auto;
 }
 
-.chip {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 0.7rem 1.8rem;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 500;
+.skill-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
   transition: var(--transition);
-  box-shadow: 0 4px 10px rgba(108, 99, 255, 0.3);
 }
 
-.chip:hover {
-  background-color: var(--secondary-color);
-  transform: translateY(-3px);
+.skill-icon i {
+  font-size: 3.5rem;
+  transition: var(--transition);
+}
+
+.skill-icon:hover i {
+  transform: scale(1.1);
+}
+
+.skill-icon span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-color);
 }
 
 /* Proyectos */
@@ -383,6 +393,21 @@ body {
   color: var(--text-light);
   margin-bottom: 1.5rem;
   line-height: 1.6;
+}
+
+.project-techs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-techs i {
+  font-size: 1.8rem;
+  transition: var(--transition);
+}
+
+.project-techs i:hover {
+  transform: scale(1.2);
 }
 
 .project-links {
@@ -550,7 +575,7 @@ body {
 .footer {
   text-align: center;
   padding: 2.5rem 0;
-  background-color: var(--dark-color);
+  background-color: var(--footer-bg);
 }
 
 .footer-text {
@@ -643,6 +668,14 @@ body {
     width: 100%;
     max-width: 280px;
   }
+
+  .skills-icons {
+    gap: 1.5rem;
+  }
+
+  .skill-icon i {
+    font-size: 3rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -680,5 +713,17 @@ body {
   
   .project-img {
     height: 180px;
+  }
+
+  .skills-icons {
+    gap: 1rem;
+  }
+
+  .skill-icon i {
+    font-size: 2.5rem;
+  }
+
+  .skill-icon span {
+    font-size: 0.8rem;
   }
 }

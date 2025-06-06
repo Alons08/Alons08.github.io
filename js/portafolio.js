@@ -78,7 +78,7 @@ menuToggle.addEventListener('click', () => {
 // Animaciones al hacer scroll
 function animateOnScroll() {
   const animatableElements = document.querySelectorAll(
-    '.project-card, .contact-card, .social-card, .section h2, .section p, .skills-chips'
+    '.project-card, .contact-card, .social-card, .section h2, .section p, .skills-icons, .skill-icon'
   );
   
   animatableElements.forEach(element => {
@@ -95,7 +95,7 @@ function animateOnScroll() {
 // Configurar animaciones iniciales
 function setupAnimations() {
   document.querySelectorAll(
-    '.project-card, .contact-card, .social-card, .section h2, .section p, .skills-chips'
+    '.project-card, .contact-card, .social-card, .section h2, .section p, .skills-icons, .skill-icon'
   ).forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
