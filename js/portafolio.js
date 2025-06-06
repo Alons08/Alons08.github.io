@@ -11,6 +11,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       if (navLinks.classList.contains('active')) {
         navLinks.classList.remove('active');
         menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        menuToggle.style.color = '';
       }
 
       // Ajustar desplazamiento para evitar que el título quede oculto
@@ -67,12 +68,33 @@ themeToggle.addEventListener('click', () => {
 // Menú móvil
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
+const navbar = document.querySelector('.navbar');
+
+// Asegurar altura consistente del navbar
+navbar.style.height = '80px';
+navbar.style.boxSizing = 'border-box';
 
 menuToggle.addEventListener('click', () => {
   const isOpen = navLinks.classList.toggle('active');
   menuToggle.innerHTML = isOpen 
     ? '<i class="fas fa-times"></i>' 
     : '<i class="fas fa-bars"></i>';
+  
+  // Cambiar color del icono cuando el menú está abierto
+  if (isOpen) {
+    menuToggle.style.color = 'white';
+  } else {
+    menuToggle.style.color = '';
+  }
+});
+
+// Cerrar menú al hacer clic en un enlace
+document.querySelectorAll('#navLinks a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    menuToggle.style.color = '';
+  });
 });
 
 // Animaciones al hacer scroll
