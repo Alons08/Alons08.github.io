@@ -44,6 +44,7 @@ function initTheme() {
       localStorage.removeItem('themeTimestamp');
       body.setAttribute('data-theme', 'light');
       themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+      updateMenuIconColor(); // Actualizar color del ícono del menú
       return;
     }
   }
@@ -57,6 +58,15 @@ function initTheme() {
   } else {
     body.setAttribute('data-theme', 'light');
     themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+  }
+  updateMenuIconColor(); // Actualizar color del ícono del menú
+}
+
+// Función para actualizar el color del ícono del menú
+function updateMenuIconColor() {
+  if (navLinks.classList.contains('active')) {
+    const isDarkMode = body.getAttribute('data-theme') === 'dark';
+    menuToggle.style.color = isDarkMode ? 'white' : 'black';
   }
 }
 
@@ -79,6 +89,8 @@ themeToggle.addEventListener('click', () => {
     localStorage.removeItem('theme');
     localStorage.removeItem('themeTimestamp');
   }
+  
+  updateMenuIconColor(); // Actualizar color del ícono del menú
 });
 
 // Verificar periódicamente si hay que resetear el tema
@@ -94,6 +106,7 @@ function checkThemeReset() {
       themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
       localStorage.removeItem('theme');
       localStorage.removeItem('themeTimestamp');
+      updateMenuIconColor(); // Actualizar color del ícono del menú
     }
   }
 }
@@ -113,12 +126,26 @@ menuToggle.addEventListener('click', () => {
     ? '<i class="fas fa-times"></i>' 
     : '<i class="fas fa-bars"></i>';
   
-  // Cambiar color del icono cuando el menú está abierto
+  // Cambiar color del icono basado en el tema actual
   if (isOpen) {
-    menuToggle.style.color = 'white';
+    const isDarkMode = body.getAttribute('data-theme') === 'dark';
+    menuToggle.style.color = isDarkMode ? 'white' : 'black';
   } else {
-    menuToggle.style.color = '';
+    menuToggle.style.color = ''; // Restablecer al color por defecto
   }
+});
+
+// Observador para cambios de tema
+const themeObserver = new MutationObserver(() => {
+  if (navLinks.classList.contains('active')) {
+    const isDarkMode = body.getAttribute('data-theme') === 'dark';
+    menuToggle.style.color = isDarkMode ? 'white' : 'black';
+  }
+});
+
+themeObserver.observe(body, {
+  attributes: true,
+  attributeFilter: ['data-theme']
 });
 
 // Cerrar menú al hacer clic en un enlace
@@ -164,8 +191,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   setupAnimations();
   
-  // Verificar cada minuto si hay que resetear el tema MINUTOS
-  setInterval(checkThemeReset, 300000); // 5min  ||  60000 ms = 1 minuto
+  // Verificar cada 5 minutos si hay que resetear el tema
+  setInterval(checkThemeReset, 300000); // 300000 ms = 5 minutos
   
   // Animación inicial
   setTimeout(() => {
@@ -178,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('Portafolio cargado 🚀');
 });
 
-// Manejar cambios en la preferencia de color del sistema (opcional)
+// Manejar cambios en la preferencia de color del sistema
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
   // Solo si no hay tema guardado manualmente
   if (!localStorage.getItem('theme')) {
@@ -186,5 +213,6 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e =
     themeToggle.innerHTML = e.matches 
       ? '<i class="fas fa-sun"></i>' 
       : '<i class="fas fa-moon"></i>';
+    updateMenuIconColor(); // Actualizar color del ícono del menú
   }
 });
