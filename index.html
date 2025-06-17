@@ -1,288 +1,396 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alonso Leandro | Backend Developer</title>
-  <link rel="stylesheet" href="css/portafolio.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <!-- Devicons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-</head>
-<body>
-  <!-- Barra de navegación -->
-  <nav class="navbar">
-    <div class="container">
-      <a href="#" class="logo">Alonso<span>Dev</span></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">Sobre mí</a></li>
-        <li><a href="#skills">Habilidades</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
-      <button id="theme-toggle" class="theme-toggle">
-        <i class="fas fa-moon"></i>
-      </button>
-      <div class="menu-toggle" id="menuToggle">
-        <i class="fas fa-bars"></i>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alonso Leandro | Backend Developer</title>
+    <link rel="stylesheet" href="css/portafolio.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Devicons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+    />
+  </head>
+  <body>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="#" class="logo">Alonso<span>Dev</span></a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">Sobre mí</a></li>
+          <li><a href="#skills">Habilidades</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </button>
+        <div class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- Hero Section simplificado -->
-  <header class="hero">
-    <div class="container hero-content">
-      <div class="profile-pic-container">
-        <img src="img/alonso.png" alt="Alonso Quispe" class="profile-pic">
-      </div>
-      <h1>Alonso Leandro</h1>
-      <p class="subtitle">Desarrollador web back-end especializado en Spring Boot y estudiante de Ingeniería de Sistemas (9.º ciclo)</p>
-      <a href="#projects" class="btn">Ver Proyectos</a>
-    </div>
-  </header>
-
-  <!-- Sobre Mí -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2>Sobre mí</h2>
-      <div class="about-content">
-        <p>
-          Hola, soy Alonso Ariam Leandro Quispe, desarrollador web back-end especializado en Spring Boot, con una fuerte pasión por la programación y la creación de soluciones eficientes. Actualmente curso el 9.º ciclo de Ingeniería de Sistemas en la UTP. Además, fui ganador de un concurso de programación, lo que reafirma mi compromiso con la resolución creativa de problemas.
+    <!-- Hero Section simplificado -->
+    <header class="hero">
+      <div class="container hero-content">
+        <div class="profile-pic-container">
+          <img src="img/alonso.png" alt="Alonso Quispe" class="profile-pic" />
+        </div>
+        <h1>Alonso Leandro</h1>
+        <p class="subtitle">
+          Desarrollador web back-end especializado en Spring Boot y estudiante
+          de Ingeniería de Sistemas (9.º ciclo)
         </p>
-        <div class="social-links">
-          <a href="https://github.com/Alons08" target="_blank" class="social-card github">
-            <i class="fab fa-github"></i>
-            <div class="social-info">
-              <span class="social-label">GitHub</span>
-              <span class="social-username">@Alons08</span>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/alonso-ariam-leandro-quispe-b3242b2b3/" target="_blank" class="social-card linkedin">
-            <i class="fab fa-linkedin-in"></i>
-            <div class="social-info">
-              <span class="social-label">LinkedIn</span>
-              <span class="social-username">alonso-leandro</span>
-            </div>
-          </a>
-        </div>
+        <a href="#projects" class="btn btn-project">Ver Proyectos</a>
+        <a href="#contact" class="btn btn-contact">Contáctame</a>
+        <!-- Nuevo botón con clase específica -->
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- Habilidades -->
-  <section id="skills" class="section bg-light">
-    <div class="container">
-      <h2>Mis Habilidades</h2>
-      <div class="skills-icons">
-        <div class="skill-icon">
-          <i class="devicon-java-plain colored"></i>
-          <span>Java</span>
-        </div>
-        <div class="skill-icon">
-          <i class="devicon-spring-plain colored"></i>
-          <span>Spring Boot</span>
-        </div>
-        <div class="skill-icon">
-          <i class="devicon-mysql-plain colored"></i>
-          <span>MySQL</span>
-        </div>
-        <div class="skill-icon">
-          <i class="devicon-microsoftsqlserver-plain colored"></i>
-          <span>SQL Server</span>
-        </div>
-        <div class="skill-icon">
-          <i class="devicon-git-plain colored"></i>
-          <span>Git</span>
-        </div>
-        <div class="skill-icon">
-          <i class="devicon-github-original colored"></i>
-          <span>GitHub</span>
-        </div>
-        <div class="skill-icon">
-          <i class="devicon-docker-plain colored"></i>
-          <span>Docker</span>
-        </div>
-        <div class="skill-icon">
-          <i class="devicon-azure-plain colored"></i>
-          <span>Azure</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Proyectos -->
-  <section id="projects" class="section">
-    <div class="container">
-      <h2>Mis Proyectos</h2>
-      <div class="projects-grid">
-        <!-- Proyecto 1 -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="img/los-gemelos.png" alt="Sistema de Reservas">
-          </div>
-          <div class="project-info">
-            <h3>Sitio Web - Restaurante Campetres "Los Gemelos"</h3>
-            <p><p>Sitio web funcional con navegación intuitiva, incluye secciones como Sobre mí, Carta interactiva con carrito de compras, Eventos especiales y Contáctanos con mapa integrado.</p>
-            <div class="project-techs">
-              <i class="devicon-html5-plain colored" title="HTML5"></i>
-              <i class="devicon-css3-plain colored" title="CSS3"></i>
-              <i class="devicon-javascript-plain colored" title="JavaScript"></i>
-            </div>
-            <div class="project-links">
-              <a href="https://los-gemelos.alonsoleandro.me/" class="btn-small"><i class="fas fa-external-link-alt"></i> Abrir</a>
-            </div>
-          </div>
-        </div>
-        <!-- Proyecto 6 -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="img/ositos1.png" alt="Sistema de Reservas">
-          </div>
-          <div class="project-info">
-            <h3>Página Web - Ositos Sorpresa Piery</h3>
-            <p>Desarrollada con HTML, CSS y JS, esta app te permite explorar paquetes, ver fotos y hacer reservas para vivir una experiencia única con música, baile y sorpresas.</p>
-            <div class="project-techs">
-              <i class="devicon-html5-plain colored" title="HTML5"></i>
-              <i class="devicon-css3-plain colored" title="CSS3"></i>
-              <i class="devicon-javascript-plain colored" title="JavaScript"></i>
-            </div>
-            <div class="project-links">
-              <a href="https://ositos-sorpresa-piery.alonsoleandro.me/" class="btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>
-              <a href="https://github.com/Alons08" class="btn-small btn-outline"><i class="fab fa-github"></i> Código</a>
-            </div>
-          </div>
-        </div>
-        <!-- Proyecto 7 -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="img/chinecas1.png" alt="Sistema de Matrículas">
-          </div>
-          <div class="project-info">
-            <h3>Sitio Web - Canal de "Chinecas"</h3>
-            <p>Desarrollada con Spring Boot y MySQL para gestionar agricultores, parcelas y el consumo de agua, optimizando la administración hídrica del canal.</p>
-            <div class="project-techs">
-              <i class="devicon-java-plain colored" title="Java"></i>
-              <i class="devicon-spring-plain colored" title="Spring Boot"></i>
-              <i class="devicon-mysql-plain colored" title="MySQL"></i>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>
-              <a href="https://github.com/Alons08/CanalChinecas-Web" class="btn-small btn-outline"><i class="fab fa-github"></i> Código</a>
-            </div>
-          </div>
-        </div>
-        <!-- Proyecto 8 -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="img/kingsman1.png" alt="Gestión Bibliotecaria">
-          </div>
-          <div class="project-info">
-            <h3>Aplicación Web - Tienda de Ropa "kingsMan"</h3>
-            <p>Desarrollada con HTML, CSS, JavaScript y MySQL para gestionar productos, carrito de compras y formularios con validaciones básicas.</p>
-            <div class="project-techs">
-              <i class="devicon-html5-plain colored" title="HTML5"></i>
-              <i class="devicon-css3-plain colored" title="CSS3"></i>
-              <i class="devicon-javascript-plain colored" title="JavaScript"></i>
-              <i class="devicon-mysql-plain colored" title="MySQL"></i>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>
-              <a href="https://github.com/Alons08/KingsMan" class="btn-small btn-outline"><i class="fab fa-github"></i> Código</a>
-            </div>
-          </div>
-        </div>
-        <!-- Proyecto 9 -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="img/colegioSwing1.png" alt="Gestión Bibliotecaria">
-          </div>
-          <div class="project-info">
-            <h3>Aplicación de Escritorio - Colegio "Santa Rosa de Lima"</h3>
-            <p>Desarrollada con Java y MySQL para gestionar alumnos, docentes, matrículas, notas y pagos en el colegio Santa Rosa de Lima.</p>
-            <div class="project-techs">
-              <i class="devicon-java-plain colored" title="Java"></i>
-              <i class="devicon-mysql-plain colored" title="MySQL"></i>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>
-              <a href="https://github.com/Alons08/Colegio_Santa-Rosa-De-Lima" class="btn-small btn-outline"><i class="fab fa-github"></i> Código</a>
-            </div>
-          </div>
-        </div>
-        <!-- Proyecto 10 -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="img/sumermarket1.png" alt="Gestión Bibliotecaria">
-          </div>
-          <div class="project-info">
-            <h3>Aplicación de Escritorio - Supermarket "NIBBLE"</h3>
-            <p>Desarrollada en Java y SQL Server para gestionar productos, empleados, clientes y promociones, optimizando la operación del supermercado.</p>
-            <div class="project-techs">
-              <i class="devicon-java-plain colored" title="Java"></i>
-              <i class="devicon-microsoftsqlserver-plain colored" title="SQL Server"></i>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>
-              <a href="https://github.com/Alons08/Supermarket-NIBBLE" class="btn-small btn-outline"><i class="fab fa-github"></i> Código</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contacto Directo Mejorado -->
-  <section id="contact" class="section contact-section">
-    <div class="container">
-      <h2>Contacto</h2>
-      <div class="contact-container">
-        <div class="contact-card">
-          <div class="contact-header">
-            <h4>¡Hablemos!</h4>
-            <p>Disponible para colaboraciones</p>
-          </div>
-          
-          <div class="contact-methods">
-            <a href="https://wa.me/51931088900" target="_blank" class="contact-method whatsapp">
-              <div class="contact-icon">
-                <i class="fab fa-whatsapp"></i>
-              </div>
-              <div class="contact-details">
-                <h4>WhatsApp</h4>
-                <p>+51 931 088 900</p>
-                <span class="contact-action">Enviar mensaje</span>
+    <!-- Sobre Mí -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>Sobre mí</h2>
+        <div class="about-content">
+          <p>
+            Hola, soy Alonso Ariam Leandro Quispe, desarrollador web back-end
+            especializado en Spring Boot, con una fuerte pasión por la
+            programación y la creación de soluciones eficientes. Actualmente
+            curso el 9.º ciclo de Ingeniería de Sistemas en la UTP. Además, fui
+            ganador de un concurso de programación, lo que reafirma mi
+            compromiso con la resolución creativa de problemas.
+          </p>
+          <div class="social-links">
+            <a
+              href="https://github.com/Alons08"
+              target="_blank"
+              class="social-card github"
+            >
+              <i class="fab fa-github"></i>
+              <div class="social-info">
+                <span class="social-label">GitHub</span>
+                <span class="social-username">@Alons08</span>
               </div>
             </a>
-            
-            <a href="mailto:alonsoleandro.dev@gmail.com" class="contact-method email">
-              <div class="contact-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div class="contact-details">
-                <h4>Correo Electrónico</h4>
-                <p>alonsoleandro.dev@gmail.com</p>
-                <span class="contact-action">Enviar correo</span>
+            <a
+              href="https://www.linkedin.com/in/alonso-ariam-leandro-quispe-b3242b2b3/"
+              target="_blank"
+              class="social-card linkedin"
+            >
+              <i class="fab fa-linkedin-in"></i>
+              <div class="social-info">
+                <span class="social-label">LinkedIn</span>
+                <span class="social-username">alonso-leandro</span>
               </div>
             </a>
           </div>
-          
-          <div class="contact-footer">
-            <p><i class="fas fa-clock"></i> Lunes a domingo, 9am - 11pm</p>
-            <p class="response-time"><i class="fas fa-bolt"></i> Respuesta rápida</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="skills" class="section bg-light">
+      <div class="container">
+        <h2>Mis Habilidades</h2>
+        <div class="skills-icons">
+          <div class="skill-icon">
+            <i class="devicon-java-plain colored"></i>
+            <span>Java</span>
+          </div>
+          <div class="skill-icon">
+            <i class="devicon-spring-plain colored"></i>
+            <span>Spring Boot</span>
+          </div>
+          <div class="skill-icon">
+            <i class="devicon-mysql-plain colored"></i>
+            <span>MySQL</span>
+          </div>
+          <div class="skill-icon">
+            <i class="devicon-microsoftsqlserver-plain colored"></i>
+            <span>SQL Server</span>
+          </div>
+          <div class="skill-icon">
+            <i class="devicon-git-plain colored"></i>
+            <span>Git</span>
+          </div>
+          <div class="skill-icon">
+            <i class="devicon-github-original colored"></i>
+            <span>GitHub</span>
+          </div>
+          <div class="skill-icon">
+            <i class="devicon-docker-plain colored"></i>
+            <span>Docker</span>
+          </div>
+          <div class="skill-icon">
+            <i class="devicon-azure-plain colored"></i>
+            <span>Azure</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p class="footer-text">&copy; 2025 Alonso Leandro. Todos los derechos reservados.</p>
-    </div>
-  </footer>
+    <!-- Proyectos -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Mis Proyectos</h2>
+        <div class="projects-grid">
+          <!-- Proyecto 1 -->
+          <div class="project-card">
+            <div class="project-img">
+              <img src="img/los-gemelos.png" alt="Sistema de Reservas" />
+            </div>
+            <div class="project-info">
+              <h3>Sitio Web - Restaurante Campetres "Los Gemelos"</h3>
+              <p>
+                Sitio web funcional con navegación intuitiva, incluye secciones
+                como Sobre mí, Carta interactiva con carrito de compras, Eventos
+                especiales y Contáctanos con mapa integrado.
+              </p>
+              <div class="project-techs">
+                <i class="devicon-html5-plain colored" title="HTML5"></i>
+                <i class="devicon-css3-plain colored" title="CSS3"></i>
+                <i
+                  class="devicon-javascript-plain colored"
+                  title="JavaScript"
+                ></i>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://los-gemelos.alonsoleandro.me/"
+                  class="btn-small"
+                  ><i class="fas fa-external-link-alt"></i> Abrir</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Proyecto 6 -->
+          <div class="project-card">
+            <div class="project-img">
+              <img src="img/ositos1.png" alt="Sistema de Reservas" />
+            </div>
+            <div class="project-info">
+              <h3>Página Web - Ositos Sorpresa Piery</h3>
+              <p>
+                Desarrollada con HTML, CSS y JS, esta app te permite explorar
+                paquetes, ver fotos y hacer reservas para vivir una experiencia
+                única con música, baile y sorpresas.
+              </p>
+              <div class="project-techs">
+                <i class="devicon-html5-plain colored" title="HTML5"></i>
+                <i class="devicon-css3-plain colored" title="CSS3"></i>
+                <i
+                  class="devicon-javascript-plain colored"
+                  title="JavaScript"
+                ></i>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://ositos-sorpresa-piery.alonsoleandro.me/"
+                  class="btn-small"
+                  ><i class="fas fa-external-link-alt"></i> Abrir</a
+                >
+                <!--<a
+                  href="https://github.com/Alons08"
+                  class="btn-small btn-outline"
+                  ><i class="fab fa-github"></i> Código</a 
+                > -->
+              </div>
+            </div>
+          </div>
+          <!-- Proyecto 7 -->
+          <div class="project-card">
+            <div class="project-img">
+              <img src="img/chinecas1.png" alt="Sistema de Matrículas" />
+            </div>
+            <div class="project-info">
+              <h3>Sitio Web - Canal de "Chinecas"</h3>
+              <p>
+                Desarrollada con Spring Boot y MySQL para gestionar
+                agricultores, parcelas y el consumo de agua, optimizando la
+                administración hídrica del canal.
+              </p>
+              <div class="project-techs">
+                <i class="devicon-java-plain colored" title="Java"></i>
+                <i class="devicon-spring-plain colored" title="Spring Boot"></i>
+                <i class="devicon-mysql-plain colored" title="MySQL"></i>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn-small"
+                  ><i class="fas fa-external-link-alt"></i> Vídeo</a
+                >
+                <a
+                  href="https://github.com/Alons08/CanalChinecas-Web"
+                  class="btn-small btn-outline"
+                  ><i class="fab fa-github"></i> Código</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Proyecto 8 -->
+          <div class="project-card">
+            <div class="project-img">
+              <img src="img/kingsman1.png" alt="Gestión Bibliotecaria" />
+            </div>
+            <div class="project-info">
+              <h3>Aplicación Web - Tienda de Ropa "kingsMan"</h3>
+              <p>
+                Desarrollada con HTML, CSS, JavaScript y MySQL para gestionar
+                productos, carrito de compras y formularios con validaciones
+                básicas.
+              </p>
+              <div class="project-techs">
+                <i class="devicon-html5-plain colored" title="HTML5"></i>
+                <i class="devicon-css3-plain colored" title="CSS3"></i>
+                <i
+                  class="devicon-javascript-plain colored"
+                  title="JavaScript"
+                ></i>
+                <i class="devicon-mysql-plain colored" title="MySQL"></i>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn-small"
+                  ><i class="fas fa-external-link-alt"></i> Vídeo</a
+                >
+                <a
+                  href="https://github.com/Alons08/KingsMan"
+                  class="btn-small btn-outline"
+                  ><i class="fab fa-github"></i> Código</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Proyecto 9 -->
+          <div class="project-card">
+            <div class="project-img">
+              <img src="img/colegioSwing1.png" alt="Gestión Bibliotecaria" />
+            </div>
+            <div class="project-info">
+              <h3>Aplicación de Escritorio - Colegio "Santa Rosa de Lima"</h3>
+              <p>
+                Desarrollada con Java y MySQL para gestionar alumnos, docentes,
+                matrículas, notas y pagos en el colegio Santa Rosa de Lima.
+              </p>
+              <div class="project-techs">
+                <i class="devicon-java-plain colored" title="Java"></i>
+                <i class="devicon-mysql-plain colored" title="MySQL"></i>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn-small"
+                  ><i class="fas fa-external-link-alt"></i> Vídeo</a
+                >
+                <a
+                  href="https://github.com/Alons08/Colegio_Santa-Rosa-De-Lima"
+                  class="btn-small btn-outline"
+                  ><i class="fab fa-github"></i> Código</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Proyecto 10 -->
+          <div class="project-card">
+            <div class="project-img">
+              <img src="img/sumermarket1.png" alt="Gestión Bibliotecaria" />
+            </div>
+            <div class="project-info">
+              <h3>Aplicación de Escritorio - Supermarket "NIBBLE"</h3>
+              <p>
+                Desarrollada en Java y SQL Server para gestionar productos,
+                empleados, clientes y promociones, optimizando la operación del
+                supermercado.
+              </p>
+              <div class="project-techs">
+                <i class="devicon-java-plain colored" title="Java"></i>
+                <i
+                  class="devicon-microsoftsqlserver-plain colored"
+                  title="SQL Server"
+                ></i>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn-small"
+                  ><i class="fas fa-external-link-alt"></i> Vídeo</a
+                >
+                <a
+                  href="https://github.com/Alons08/Supermarket-NIBBLE"
+                  class="btn-small btn-outline"
+                  ><i class="fab fa-github"></i> Código</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <script src="js/portafolio.js"></script>
-</body>
+    <!-- Contacto Directo Mejorado -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <h2>Contacto</h2>
+        <div class="contact-container">
+          <div class="contact-card">
+            <div class="contact-header">
+              <h4>¡Hablemos!</h4>
+              <p>Disponible para colaboraciones</p>
+            </div>
+
+            <div class="contact-methods">
+              <a
+                href="https://wa.me/51931088900"
+                target="_blank"
+                class="contact-method whatsapp"
+              >
+                <div class="contact-icon">
+                  <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>WhatsApp</h4>
+                  <p>+51 931 088 900</p>
+                  <span class="contact-action">Enviar mensaje</span>
+                </div>
+              </a>
+
+              <a
+                href="mailto:alonsoleandro.dev@gmail.com"
+                class="contact-method email"
+              >
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Correo Electrónico</h4>
+                  <p>alonsoleandro.dev@gmail.com</p>
+                  <span class="contact-action">Enviar correo</span>
+                </div>
+              </a>
+              <div class="contact-footer">
+                <p><i class="fas fa-clock"></i> Lunes a domingo, 9am - 11pm</p>
+                <p class="response-time">
+                  <i class="fas fa-bolt"></i> Respuesta rápida
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p class="footer-text">
+          &copy; 2025 Alonso Leandro. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/portafolio.js"></script>
+  </body>
 </html>

@@ -83,7 +83,7 @@ body {
   margin-left: 2rem;
   text-decoration: none;
   color: var(--text-color);
-  font-weight: 500;
+  font-weight: 620; /* Cambiado a negrita */
   transition: var(--transition);
   position: relative;
 }
@@ -142,6 +142,30 @@ body {
   width: 100%;
 }
 
+.hero-content .btn {
+  display: block;
+  margin: 0 auto;
+  width: 250px; /* Reduce el ancho de los botones */
+  padding: 0.5rem 1rem; /* Ajusta el espacio interno */
+  text-align: center;
+  border-radius: 50px; /* Mantén el diseño redondeado */
+}
+
+.hero-content .btn-project {
+  margin-bottom: 1rem; /* Espaciado entre los botones */
+}
+
+.hero-content .btn-contact {
+  background-color: var(--secondary-color); /* Color diferente */
+  color: white;
+  transition: var(--transition);
+}
+
+.hero-content .btn-contact:hover {
+  background-color: var(--primary-light); /* Color al pasar el mouse */
+  transform: translateY(-3px);
+}
+
 /* Estilos para la foto de perfil */
 .profile-pic-container {
   width: 200px;
@@ -193,7 +217,7 @@ body {
   padding: 0.8rem 2rem;
   border-radius: 50px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 620;
   transition: var(--transition);
   border: none;
   cursor: pointer;
@@ -207,7 +231,7 @@ body {
 }
 
 .section {
-  padding: 6rem 0;
+  padding: 4rem 0;
   scroll-margin-top: 90px; /* Ajusta según la altura de la navbar */
 }
 
@@ -349,6 +373,9 @@ body {
 }
 
 .project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribuye el contenido uniformemente */
   background-color: var(--light-color);
   border-radius: 12px;
   overflow: hidden;
@@ -379,6 +406,10 @@ body {
 }
 
 .project-info {
+  flex-grow: 1; /* Permite que el contenido se ajuste dentro de la carta */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Asegura que los botones estén al final */
   padding: 1.8rem;
 }
 
@@ -410,6 +441,7 @@ body {
 }
 
 .project-links {
+  margin-top: auto; /* Empuja los botones hacia la parte inferior */
   display: flex;
   gap: 1rem;
 }
@@ -468,6 +500,7 @@ body {
   overflow: visible;
   transition: var(--transition);
   margin-bottom: 2rem;
+  height: auto; /* Ajusta la altura para que todo se muestre */
 }
 
 .contact-header {
@@ -556,8 +589,8 @@ body {
 }
 
 .contact-footer {
-  padding: 1.2rem;
-  border-top: 1px solid rgba(108, 99, 255, 0.1);
+  padding: 1.2rem; 
+  border-top: 1px solid rgba(108, 99, 255, 0.1); 
   text-align: center;
   font-size: 0.9rem;
   color: var(--text-light);
@@ -566,7 +599,7 @@ body {
 }
 
 .response-time {
-  margin-top: 0.5rem;
+  margin-top: 0.5rem; /* Espaciado entre los párrafos */
   font-weight: 500;
 }
 
