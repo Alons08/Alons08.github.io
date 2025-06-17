@@ -10,6 +10,8 @@
   --footer-bg: #1e1e2c;
   --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
+  --project-card-light: #ffffff;
+  --project-card-dark: #2a2a3a;
 }
 
 [data-theme="dark"] {
@@ -19,6 +21,8 @@
   --text-light: #ccc;
   --footer-text: white;
   --footer-bg: #1e1e2c;
+  --project-card-light: #2a2a3a;
+  --project-card-dark: #1e1e2c;
 }
 
 * {
@@ -83,7 +87,7 @@ body {
   margin-left: 2rem;
   text-decoration: none;
   color: var(--text-color);
-  font-weight: 620; /* Cambiado a negrita */
+  font-weight: 620;
   transition: var(--transition);
   position: relative;
 }
@@ -145,25 +149,37 @@ body {
 .hero-content .btn {
   display: block;
   margin: 0 auto;
-  width: 250px; /* Reduce el ancho de los botones */
-  padding: 0.5rem 1rem; /* Ajusta el espacio interno */
+  width: 250px;
+  padding: 0.5rem 1rem;
   text-align: center;
-  border-radius: 50px; /* Mantén el diseño redondeado */
+  border-radius: 50px;
 }
 
 .hero-content .btn-project {
-  margin-bottom: 1rem; /* Espaciado entre los botones */
+  margin-bottom: 1rem;
 }
 
 .hero-content .btn-contact {
-  background-color: var(--secondary-color); /* Color diferente */
-  color: white;
+  background-color: white;
+  color: var(--primary-color);
+  border: 2px solid white;
   transition: var(--transition);
 }
 
 .hero-content .btn-contact:hover {
-  background-color: var(--primary-light); /* Color al pasar el mouse */
-  transform: translateY(-3px);
+  background-color: transparent;
+  color: white;
+}
+
+[data-theme="dark"] .hero-content .btn-contact {
+  background-color: var(--primary-color);
+  color: white;
+  border: 2px solid var(--primary-color);
+}
+
+[data-theme="dark"] .hero-content .btn-contact:hover {
+  background-color: white;
+  color: var(--primary-color);
 }
 
 /* Estilos para la foto de perfil */
@@ -232,7 +248,7 @@ body {
 
 .section {
   padding: 4rem 0;
-  scroll-margin-top: 90px; /* Ajusta según la altura de la navbar */
+  scroll-margin-top: 90px;
 }
 
 .section h2 {
@@ -364,6 +380,37 @@ body {
   color: var(--text-color);
 }
 
+/* Filtros de proyectos */
+.project-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 50px;
+  background-color: var(--light-color);
+  color: var(--text-color);
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.filter-btn.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.filter-btn:hover:not(.active) {
+  background-color: var(--primary-light);
+  color: white;
+}
+
 /* Proyectos */
 .projects-grid {
   display: grid;
@@ -375,13 +422,18 @@ body {
 .project-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distribuye el contenido uniformemente */
-  background-color: var(--light-color);
+  justify-content: space-between;
+  background-color: var(--project-card-light);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: var(--shadow);
   transition: var(--transition);
   border: 1px solid rgba(108, 99, 255, 0.1);
+}
+
+[data-theme="dark"] .project-card {
+  background-color: var(--project-card-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .project-card:hover {
@@ -406,10 +458,10 @@ body {
 }
 
 .project-info {
-  flex-grow: 1; /* Permite que el contenido se ajuste dentro de la carta */
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Asegura que los botones estén al final */
+  justify-content: space-between;
   padding: 1.8rem;
 }
 
@@ -441,7 +493,7 @@ body {
 }
 
 .project-links {
-  margin-top: auto; /* Empuja los botones hacia la parte inferior */
+  margin-top: auto;
   display: flex;
   gap: 1rem;
 }
@@ -500,7 +552,7 @@ body {
   overflow: visible;
   transition: var(--transition);
   margin-bottom: 2rem;
-  height: auto; /* Ajusta la altura para que todo se muestre */
+  height: auto;
 }
 
 .contact-header {
@@ -599,7 +651,7 @@ body {
 }
 
 .response-time {
-  margin-top: 0.5rem; /* Espaciado entre los párrafos */
+  margin-top: 0.5rem;
   font-weight: 500;
 }
 
@@ -637,11 +689,11 @@ body {
 @media (max-width: 768px) {
   .nav-links {
     position: fixed;
-    top: 80px; /* Ajustado para que coincida con la altura del navbar */
+    top: 80px;
     left: -100%;
     width: 100%;
     height: calc(100vh - 80px);
-    background-color: var(--secondary-color); /* Nuevo color de fondo */
+    background-color: var(--secondary-color);
     flex-direction: column;
     align-items: center;
     padding: 2rem 0;
@@ -661,7 +713,7 @@ body {
   .nav-links li a {
     margin-left: 0;
     font-size: 1.2rem;
-    color: white !important; /* Texto blanco para mejor contraste */
+    color: white !important;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     transition: var(--transition);
@@ -672,10 +724,9 @@ body {
   }
 
   .nav-links li a::after {
-    display: none; /* Ocultamos el subrayado en móvil */
+    display: none;
   }
   
-  /* Asegurarnos que el navbar tenga altura consistente */
   .navbar {
     padding: 1rem 0;
     height: 80px;
@@ -728,6 +779,30 @@ body {
   .skill-icon i {
     font-size: 3rem;
   }
+
+  /* Contacto en móvil */
+  .contact-card {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  
+  .contact-method {
+    padding: 1rem;
+  }
+  
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .contact-details h4 {
+    font-size: 1rem;
+  }
+  
+  .contact-details p {
+    font-size: 0.85rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -752,19 +827,21 @@ body {
     padding: 0.7rem 1.5rem;
   }
   
-  .contact-method {
-    flex-direction: column;
-    text-align: center;
-    padding: 1.5rem 1rem;
+  .contact-card {
+    max-width: 100%;
   }
   
-  .contact-icon {
-    margin-right: 0;
-    margin-bottom: 1rem;
+  .project-filters {
+    gap: 0.5rem;
   }
   
-  .project-img {
-    height: 180px;
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
 
   .skills-icons {

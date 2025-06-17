@@ -52,7 +52,6 @@
         </p>
         <a href="#projects" class="btn btn-project">Ver Proyectos</a>
         <a href="#contact" class="btn btn-contact">Contáctame</a>
-        <!-- Nuevo botón con clase específica -->
       </div>
     </header>
 
@@ -142,9 +141,14 @@
     <section id="projects" class="section">
       <div class="container">
         <h2>Mis Proyectos</h2>
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="desktop">Escritorio</button>
+        </div>
         <div class="projects-grid">
           <!-- Proyecto 1 -->
-          <div class="project-card">
+          <div class="project-card" data-category="web">
             <div class="project-img">
               <img src="img/los-gemelos.png" alt="Sistema de Reservas" />
             </div>
@@ -173,7 +177,7 @@
             </div>
           </div>
           <!-- Proyecto 6 -->
-          <div class="project-card">
+          <div class="project-card" data-category="web">
             <div class="project-img">
               <img src="img/ositos1.png" alt="Sistema de Reservas" />
             </div>
@@ -198,16 +202,11 @@
                   class="btn-small"
                   ><i class="fas fa-external-link-alt"></i> Abrir</a
                 >
-                <!--<a
-                  href="https://github.com/Alons08"
-                  class="btn-small btn-outline"
-                  ><i class="fab fa-github"></i> Código</a 
-                > -->
               </div>
             </div>
           </div>
           <!-- Proyecto 7 -->
-          <div class="project-card">
+          <div class="project-card" data-category="web">
             <div class="project-img">
               <img src="img/chinecas1.png" alt="Sistema de Matrículas" />
             </div>
@@ -236,7 +235,7 @@
             </div>
           </div>
           <!-- Proyecto 8 -->
-          <div class="project-card">
+          <div class="project-card" data-category="web">
             <div class="project-img">
               <img src="img/kingsman1.png" alt="Gestión Bibliotecaria" />
             </div>
@@ -269,7 +268,7 @@
             </div>
           </div>
           <!-- Proyecto 9 -->
-          <div class="project-card">
+          <div class="project-card" data-category="desktop">
             <div class="project-img">
               <img src="img/colegioSwing1.png" alt="Gestión Bibliotecaria" />
             </div>
@@ -296,7 +295,7 @@
             </div>
           </div>
           <!-- Proyecto 10 -->
-          <div class="project-card">
+          <div class="project-card" data-category="desktop">
             <div class="project-img">
               <img src="img/sumermarket1.png" alt="Gestión Bibliotecaria" />
             </div>

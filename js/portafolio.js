@@ -44,7 +44,7 @@ function initTheme() {
       localStorage.removeItem('themeTimestamp');
       body.setAttribute('data-theme', 'light');
       themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-      updateMenuIconColor(); // Actualizar color del ícono del menú
+      updateMenuIconColor();
       return;
     }
   }
@@ -59,7 +59,7 @@ function initTheme() {
     body.setAttribute('data-theme', 'light');
     themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
   }
-  updateMenuIconColor(); // Actualizar color del ícono del menú
+  updateMenuIconColor();
 }
 
 // Función para actualizar el color del ícono del menú
@@ -90,7 +90,7 @@ themeToggle.addEventListener('click', () => {
     localStorage.removeItem('themeTimestamp');
   }
   
-  updateMenuIconColor(); // Actualizar color del ícono del menú
+  updateMenuIconColor();
 });
 
 // Verificar periódicamente si hay que resetear el tema
@@ -106,7 +106,7 @@ function checkThemeReset() {
       themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
       localStorage.removeItem('theme');
       localStorage.removeItem('themeTimestamp');
-      updateMenuIconColor(); // Actualizar color del ícono del menú
+      updateMenuIconColor();
     }
   }
 }
@@ -131,7 +131,7 @@ menuToggle.addEventListener('click', () => {
     const isDarkMode = body.getAttribute('data-theme') === 'dark';
     menuToggle.style.color = isDarkMode ? 'white' : 'black';
   } else {
-    menuToggle.style.color = ''; // Restablecer al color por defecto
+    menuToggle.style.color = '';
   }
 });
 
@@ -185,11 +185,45 @@ function setupAnimations() {
   });
 }
 
+// Filtrado de proyectos
+function setupProjectFilters() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remover clase active de todos los botones
+      filterBtns.forEach(btn => btn.classList.remove('active'));
+      // Agregar clase active al botón clickeado
+      btn.classList.add('active');
+      
+      const filter = btn.dataset.filter;
+      
+      projectCards.forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 50);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(20px)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 300);
+        }
+      });
+    });
+  });
+}
+
 // Inicialización cuando el DOM está listo
 document.addEventListener('DOMContentLoaded', () => {
   // Inicializar componentes
   initTheme();
   setupAnimations();
+  setupProjectFilters();
   
   // Verificar cada 5 minutos si hay que resetear el tema
   setInterval(checkThemeReset, 300000); // 300000 ms = 5 minutos
@@ -213,6 +247,6 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e =
     themeToggle.innerHTML = e.matches 
       ? '<i class="fas fa-sun"></i>' 
       : '<i class="fas fa-moon"></i>';
-    updateMenuIconColor(); // Actualizar color del ícono del menú
+    updateMenuIconColor();
   }
 });
