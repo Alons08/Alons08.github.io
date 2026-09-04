@@ -49,16 +49,18 @@ function initTheme() {
     }
   }
   
-  // Prioridad: localStorage > modo día por defecto
+  // Prioridad: localStorage > preferencia del sistema > modo día
+  let theme;
   if (savedTheme) {
-    body.setAttribute('data-theme', savedTheme);
-    themeToggle.innerHTML = savedTheme === 'dark' 
-      ? '<i class="fas fa-sun"></i>' 
-      : '<i class="fas fa-moon"></i>';
+    theme = savedTheme;
   } else {
-    body.setAttribute('data-theme', 'light');
-    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
+
+  body.setAttribute('data-theme', theme);
+  themeToggle.innerHTML = theme === 'dark'
+    ? '<i class="fas fa-sun"></i>'
+    : '<i class="fas fa-moon"></i>';
   updateMenuIconColor();
 }
 
@@ -110,6 +112,135 @@ function checkThemeReset() {
     }
   }
 }
+
+// ===== Sistema de idiomas (ES/EN) =====
+const translations = {
+  es: {
+    'nav.about': 'Sobre mí',
+    'nav.skills': 'Habilidades',
+    'nav.projects': 'Proyectos',
+    'nav.contact': 'Contacto',
+    'hero.subtitle': 'Desarrollador web back-end especializado en Spring Boot y Bachiller en Ingeniería de Sistemas e Informática',
+    'hero.projectsBtn': 'Ver Proyectos',
+    'hero.contactBtn': 'Contáctame',
+    'about.title': 'Sobre mí',
+    'about.text': 'Hola, soy Alonso Ariam Leandro Quispe, desarrollador web back-end especializado en Spring Boot, con una gran pasión por la programación y la creación de soluciones eficientes. Actualmente soy Bachiller en Ingeniería de Sistemas por la UTP. Además, fui ganador de un concurso de programación, lo que reafirma mi compromiso con la resolución creativa de problemas.',
+    'about.github': 'GitHub',
+    'about.linkedin': 'LinkedIn',
+    'about.cv': 'Currículum',
+    'about.viewProfile': 'Ver Perfil',
+    'about.downloadCv': 'Descargar CV',
+    'skills.title': 'Mis Habilidades',
+    'projects.title': 'Mis Proyectos',
+    'projects.filterAll': 'Todos',
+    'projects.filterWeb': 'Web',
+    'projects.filterDesktop': 'Escritorio',
+    'projects.btnApp': 'App',
+    'projects.btnVideo': 'Video',
+    'projects.btnCode': 'Código',
+    'projects.p1.desc': 'Sistema SaaS de Punto de Venta con gestión de ventas e inventario, dashboards en tiempo real y reportes para restaurantes que optimizan procesos y mejoran la eficiencia.',
+    'projects.p2.desc': 'Videojuego web educativo con sistema de registro y autenticación, ranking global en tiempo real y múltiples categorías temáticas para competir y desafiar tus conocimientos.',
+    'projects.p3.title': 'Restaurante Campestre "Los Gemelos"',
+    'projects.p3.desc': 'Plataforma web con funcionalidades de e-commerce. Permite navegar por la carta, gestionar pedidos en carrito, completar datos de entrega y finalizar compras vía WhatsApp automático.',
+    'projects.p4.title': 'Ositos Sorpresa Piery',
+    'projects.p4.desc': 'Plataforma web con catálogo de 3 paquetes personalizables, galería interactiva de trabajos realizados y sistema de reservas automáticas integrado con WhatsApp.',
+    'projects.p5.title': 'Sistema Canal de "Chinecas"',
+    'projects.p5.desc': 'Desarrollada con Spring Boot y MySQL para gestionar agricultores, parcelas y el consumo de agua, optimizando la administración hídrica del canal.',
+    'projects.p6.title': 'Tienda de Ropa "KingsMan"',
+    'projects.p6.desc': 'Desarrollada con HTML, CSS, JavaScript y MySQL para gestionar productos, carrito de compras y formularios con validaciones básicas.',
+    'projects.p7.title': 'Sistema Colegio "Santa Rosa de Lima"',
+    'projects.p7.desc': 'Aplicación de escritorio desarrollada con Java y MySQL para gestionar alumnos, docentes, matrículas, notas y pagos en el colegio Santa Rosa de Lima.',
+    'projects.p8.title': 'Supermarket "NIBBLE"',
+    'projects.p8.desc': 'Aplicación de escritorio desarrollada en Java y SQL Server para gestionar productos, empleados, clientes y promociones, optimizando la operación del supermercado.',
+    'contact.title': 'Contacto',
+    'contact.headerTitle': '¡Hablemos!',
+    'contact.headerSub': 'Disponible para colaboraciones',
+    'contact.sendMessage': 'Enviar mensaje',
+    'contact.emailTitle': 'Correo Electrónico',
+    'contact.sendEmail': 'Enviar correo',
+    'contact.hours': 'Lunes a domingo, 9am - 11pm',
+    'contact.quickResponse': 'Respuesta rápida',
+    'footer.rights': 'Todos los derechos reservados.'
+  },
+  en: {
+    'nav.about': 'About me',
+    'nav.skills': 'Skills',
+    'nav.projects': 'Projects',
+    'nav.contact': 'Contact',
+    'hero.subtitle': 'Back-end web developer specialized in Spring Boot and Bachelor in Systems and Computer Engineering',
+    'hero.projectsBtn': 'View Projects',
+    'hero.contactBtn': 'Contact me',
+    'about.title': 'About me',
+    'about.text': 'Hi, I am Alonso Ariam Leandro Quispe, a back-end web developer specialized in Spring Boot, with a great passion for programming and creating efficient solutions. I am currently a Bachelor in Systems Engineering from UTP. In addition, I was a winner of a programming contest, which reinforces my commitment to creative problem solving.',
+    'about.github': 'GitHub',
+    'about.linkedin': 'LinkedIn',
+    'about.cv': 'Resume',
+    'about.viewProfile': 'View Profile',
+    'about.downloadCv': 'Download CV',
+    'skills.title': 'My Skills',
+    'projects.title': 'My Projects',
+    'projects.filterAll': 'All',
+    'projects.filterWeb': 'Web',
+    'projects.filterDesktop': 'Desktop',
+    'projects.btnApp': 'App',
+    'projects.btnVideo': 'Video',
+    'projects.btnCode': 'Code',
+    'projects.p1.desc': 'SaaS Point of Sale system with sales and inventory management, real-time dashboards and reports for restaurants that optimize processes and improve efficiency.',
+    'projects.p2.desc': 'Educational web game with registration and authentication system, real-time global ranking and multiple thematic categories to compete and challenge your knowledge.',
+    'projects.p3.title': '"Los Gemelos" Country Restaurant',
+    'projects.p3.desc': 'Web platform with e-commerce features. Browse the menu, manage cart orders, complete delivery information and finalize purchases via automated WhatsApp.',
+    'projects.p4.title': 'Ositos Sorpresa Piery',
+    'projects.p4.desc': 'Web platform with a catalog of 3 customizable packages, interactive gallery of past work and a booking system integrated with WhatsApp.',
+    'projects.p5.title': '"Chinecas" Canal System',
+    'projects.p5.desc': 'Developed with Spring Boot and MySQL to manage farmers, plots and water consumption, optimizing the water administration of the canal.',
+    'projects.p6.title': '"KingsMan" Clothing Store',
+    'projects.p6.desc': 'Developed with HTML, CSS, JavaScript and MySQL to manage products, shopping cart and forms with basic validations.',
+    'projects.p7.title': '"Santa Rosa de Lima" School System',
+    'projects.p7.desc': 'Desktop application developed with Java and MySQL to manage students, teachers, enrollments, grades and payments at the Santa Rosa de Lima school.',
+    'projects.p8.title': '"NIBBLE" Supermarket',
+    'projects.p8.desc': 'Desktop application developed in Java and SQL Server to manage products, employees, customers and promotions, optimizing supermarket operations.',
+    'contact.title': 'Contact',
+    'contact.headerTitle': "Let's talk!",
+    'contact.headerSub': 'Available for collaborations',
+    'contact.sendMessage': 'Send message',
+    'contact.emailTitle': 'Email',
+    'contact.sendEmail': 'Send email',
+    'contact.hours': 'Monday to Sunday, 9am - 11pm',
+    'contact.quickResponse': 'Quick response',
+    'footer.rights': 'All rights reserved.'
+  }
+};
+
+const langToggle = document.getElementById('lang-toggle');
+const htmlElement = document.documentElement;
+
+// Aplicar el idioma seleccionado a todos los elementos con data-i18n
+function applyLanguage(lang) {
+  const dict = translations[lang] || translations.es;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key] !== undefined) {
+      el.textContent = dict[key];
+    }
+  });
+  htmlElement.setAttribute('lang', lang);
+  langToggle.textContent = lang === 'es' ? 'EN' : 'ES';
+}
+
+// Inicializar idioma desde localStorage o español
+function initLanguage() {
+  const savedLang = localStorage.getItem('lang');
+  const lang = (savedLang === 'en' || savedLang === 'es') ? savedLang : 'es';
+  applyLanguage(lang);
+}
+
+// Cambiar idioma
+langToggle.addEventListener('click', () => {
+  const currentLang = htmlElement.getAttribute('lang') || 'es';
+  const newLang = currentLang === 'es' ? 'en' : 'es';
+  applyLanguage(newLang);
+  localStorage.setItem('lang', newLang);
+});
 
 // Menú móvil
 const menuToggle = document.getElementById('menuToggle');
@@ -222,6 +353,7 @@ function setupProjectFilters() {
 document.addEventListener('DOMContentLoaded', () => {
   // Inicializar componentes
   initTheme();
+  initLanguage();
   setupAnimations();
   setupProjectFilters();
   

@@ -40,14 +40,19 @@
       <div class="container">
         <a href="#hero" class="logo">Alocode</span></a>
         <ul class="nav-links" id="navLinks">
-          <li><a href="#about">Sobre mí</a></li>
-          <li><a href="#skills">Habilidades</a></li>
-          <li><a href="#projects">Proyectos</a></li>
-          <li><a href="#contact">Contacto</a></li>
+          <li><a href="#about" data-i18n="nav.about">Sobre mí</a></li>
+          <li><a href="#skills" data-i18n="nav.skills">Habilidades</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Proyectos</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
         </ul>
-        <button id="theme-toggle" class="theme-toggle">
-          <i class="fas fa-moon"></i>
-        </button>
+        <div class="navbar-controls">
+          <button id="lang-toggle" class="lang-toggle" title="Change language / Cambiar idioma">
+            EN
+          </button>
+          <button id="theme-toggle" class="theme-toggle">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
         <div class="menu-toggle" id="menuToggle">
           <i class="fas fa-bars"></i>
         </div>
@@ -61,21 +66,21 @@
           <img src="img/alonso fondo blanco.png" alt="Alonso Quispe" class="profile-pic" />
         </div>
         <h1>Alonso Leandro</h1>
-        <p class="subtitle">
+        <p class="subtitle" data-i18n="hero.subtitle">
           Desarrollador web back-end especializado en Spring Boot y Bachiller
           en Ingeniería de Sistemas e Informática
         </p>
-        <a href="#projects" class="btn btn-project">Ver Proyectos</a>
-        <a href="#contact" class="btn btn-contact">Contáctame</a>
+        <a href="#projects" class="btn btn-project" data-i18n="hero.projectsBtn">Ver Proyectos</a>
+        <a href="#contact" class="btn btn-contact" data-i18n="hero.contactBtn">Contáctame</a>
       </div>
     </header>
 
     <!-- Sobre Mí -->
     <section id="about" class="section">
       <div class="container">
-        <h2>Sobre mí</h2>
+        <h2 data-i18n="about.title">Sobre mí</h2>
         <div class="about-content">
-          <p>
+          <p data-i18n="about.text">
             Hola, soy Alonso Ariam Leandro Quispe, desarrollador web back-end especializado en Spring Boot, con una gran pasión por la programación y la creación de soluciones eficientes. Actualmente soy Bachiller en Ingeniería de Sistemas por la UTP. Además, fui ganador de un concurso de programación, lo que reafirma mi compromiso con la resolución creativa de problemas.
           </p>
           <div class="social-links">
@@ -86,8 +91,8 @@
             >
               <i class="fab fa-github"></i>
               <div class="social-info">
-                <span class="social-label">GitHub</span>
-                <span class="social-username">Ver Perfil</span>
+                <span class="social-label" data-i18n="about.github">GitHub</span>
+                <span class="social-username" data-i18n="about.viewProfile">Ver Perfil</span>
               </div>
             </a>
             <a
@@ -97,8 +102,8 @@
             >
               <i class="fab fa-linkedin-in"></i>
               <div class="social-info">
-                <span class="social-label">LinkedIn</span>
-                <span class="social-username">Ver Perfil</span>
+                <span class="social-label" data-i18n="about.linkedin">LinkedIn</span>
+                <span class="social-username" data-i18n="about.viewProfile">Ver Perfil</span>
               </div>
             </a>
             <a
@@ -108,8 +113,8 @@
             >
               <i class="fas fa-file-pdf"></i>
               <div class="social-info">
-                <span class="social-label">Currículum</span>
-                <span class="social-username">Descargar CV</span>
+                <span class="social-label" data-i18n="about.cv">Currículum</span>
+                <span class="social-username" data-i18n="about.downloadCv">Descargar CV</span>
               </div>
             </a>
           </div>
@@ -120,7 +125,7 @@
     <!-- Habilidades -->
     <section id="skills" class="section bg-light">
       <div class="container">
-        <h2>Mis Habilidades</h2>
+        <h2 data-i18n="skills.title">Mis Habilidades</h2>
         <div class="skills-icons">
           <div class="skill-icon">
             <i class="devicon-java-plain colored"></i>
@@ -173,13 +178,13 @@
     <!-- Proyectos -->
     <section id="projects" class="section">
       <div class="container">
-        <h2>Mis Proyectos</h2>
+        <h2 data-i18n="projects.title">Mis Proyectos</h2>
         
         <!-- Filtros -->
         <div class="project-filters">
-          <button class="filter-btn active" data-filter="all">Todos</button>
-          <button class="filter-btn" data-filter="web">Web</button>
-          <button class="filter-btn" data-filter="desktop">Escritorio</button>
+          <button class="filter-btn active" data-filter="all" data-i18n="projects.filterAll">Todos</button>
+          <button class="filter-btn" data-filter="web" data-i18n="projects.filterWeb">Web</button>
+          <button class="filter-btn" data-filter="desktop" data-i18n="projects.filterDesktop">Escritorio</button>
         </div>
         
         <!-- Grid de proyectos -->
@@ -189,11 +194,11 @@
           <div class="project-card" data-category="web">
             <div class="project-image">
               <img src="img/alopos.png" alt="Alopos">
-              <div class="project-category">Web</div>
+              <div class="project-category" data-i18n="projects.filterWeb">Web</div>
             </div>
             <div class="project-content">
               <h3 class="project-title">AloPOS</h3>
-              <p class="project-description">
+              <p class="project-description" data-i18n="projects.p1.desc">
                 Sistema SaaS de Punto de Venta con gestión de ventas e inventario, dashboards en tiempo real
                 y reportes para restaurantes que optimizan procesos y mejoran la eficiencia.
               </p>
@@ -207,14 +212,14 @@
               </div>
               <div class="project-actions">
                 <a href="https://alopos.onrender.com/" target="_blank" class="project-btn btn-primary">
-                  <i class="fas fa-external-link-alt"></i> App
+                  <i class="fas fa-external-link-alt"></i> <span data-i18n="projects.btnApp">App</span>
                 </a>
                 <!--
                 <a href="#" class="project-btn btn-secondary">
-                  <i class="fas fa-play"></i> Video
+                  <i class="fas fa-play"></i> <span data-i18n="projects.btnVideo">Video</span>
                 </a>
                 <a href="#" class="project-btn btn-outline">
-                  <i class="fab fa-github"></i> Código
+                  <i class="fab fa-github"></i> <span data-i18n="projects.btnCode">Código</span>
                 </a>
                 -->
               </div>
@@ -225,11 +230,11 @@
           <div class="project-card" data-category="web">
             <div class="project-image">
               <img src="img/triviaventura.png" alt="Triviaventura">
-              <div class="project-category">Web</div>
+              <div class="project-category" data-i18n="projects.filterWeb">Web</div>
             </div>
             <div class="project-content">
               <h3 class="project-title">Triviaventura</h3>
-              <p class="project-description">
+              <p class="project-description" data-i18n="projects.p2.desc">
                 Videojuego web educativo con sistema de registro y autenticación, ranking global en tiempo real 
                 y múltiples categorías temáticas para competir y desafiar tus conocimientos.
               </p>
@@ -243,14 +248,14 @@
               </div>
               <div class="project-actions">
                 <a href="https://triviaventura.onrender.com/" target="_blank" class="project-btn btn-primary">
-                  <i class="fas fa-external-link-alt"></i> App
+                  <i class="fas fa-external-link-alt"></i> <span data-i18n="projects.btnApp">App</span>
                 </a>
                 <a href="https://www.youtube.com/shorts/4flXWuzxdHI" class="project-btn btn-secondary">
-                  <i class="fas fa-play"></i> Video
+                  <i class="fas fa-play"></i> <span data-i18n="projects.btnVideo">Video</span>
                 </a>
                 <!--
                 <a href="#" class="project-btn btn-outline">
-                  <i class="fab fa-github"></i> Código
+                  <i class="fab fa-github"></i> <span data-i18n="projects.btnCode">Código</span>
                 </a>
                 -->
               </div>
@@ -261,11 +266,11 @@
           <div class="project-card" data-category="web">
             <div class="project-image">
               <img src="img/los-gemelos.png" alt="Restaurante Los Gemelos">
-              <div class="project-category">Web</div>
+              <div class="project-category" data-i18n="projects.filterWeb">Web</div>
             </div>
             <div class="project-content">
-              <h3 class="project-title">Restaurante Campestre "Los Gemelos"</h3>
-              <p class="project-description">
+              <h3 class="project-title" data-i18n="projects.p3.title">Restaurante Campestre "Los Gemelos"</h3>
+              <p class="project-description" data-i18n="projects.p3.desc">
                 Plataforma web con funcionalidades de e-commerce. Permite navegar por la carta, 
                 gestionar pedidos en carrito, completar datos de entrega y finalizar compras vía WhatsApp automático.
               </p>
@@ -276,10 +281,10 @@
               </div>
               <div class="project-actions">
                 <a href="https://los-gemelos.alocode.lat/" target="_blank" class="project-btn btn-primary">
-                  <i class="fas fa-external-link-alt"></i> App
+                  <i class="fas fa-external-link-alt"></i> <span data-i18n="projects.btnApp">App</span>
                 </a>
                 <a href="https://www.youtube.com/watch?v=wCrrS2MXpcQ&t=28s" class="project-btn btn-secondary">
-                  <i class="fas fa-play"></i> Video
+                  <i class="fas fa-play"></i> <span data-i18n="projects.btnVideo">Video</span>
                 </a>
               </div>
             </div>
@@ -289,11 +294,11 @@
           <div class="project-card" data-category="web">
             <div class="project-image">
               <img src="img/ositos1.png" alt="Ositos Sorpresa Piery">
-              <div class="project-category">Web</div>
+              <div class="project-category" data-i18n="projects.filterWeb">Web</div>
             </div>
             <div class="project-content">
-              <h3 class="project-title">Ositos Sorpresa Piery</h3>
-              <p class="project-description">
+              <h3 class="project-title" data-i18n="projects.p4.title">Ositos Sorpresa Piery</h3>
+              <p class="project-description" data-i18n="projects.p4.desc">
                 Plataforma web con catálogo de 3 paquetes personalizables, galería interactiva 
                 de trabajos realizados y sistema de reservas automáticas integrado con WhatsApp.
               </p>
@@ -304,11 +309,11 @@
               </div>
               <div class="project-actions">
                 <a href="https://ositos-sorpresa-piery.alonsoleandro.me/vista" target="_blank" class="project-btn btn-primary">
-                  <i class="fas fa-external-link-alt"></i> App
+                  <i class="fas fa-external-link-alt"></i> <span data-i18n="projects.btnApp">App</span>
                 </a>
                 <!--
                 <a href="#" class="project-btn btn-secondary">
-                  <i class="fas fa-play"></i> Video
+                  <i class="fas fa-play"></i> <span data-i18n="projects.btnVideo">Video</span>
                 </a>
                 -->
               </div>
@@ -319,11 +324,11 @@
           <div class="project-card" data-category="web">
             <div class="project-image">
               <img src="img/chinecas1.png" alt="Canal de Chinecas">
-              <div class="project-category">Web</div>
+              <div class="project-category" data-i18n="projects.filterWeb">Web</div>
             </div>
             <div class="project-content">
-              <h3 class="project-title">Sistema Canal de "Chinecas"</h3>
-              <p class="project-description">
+              <h3 class="project-title" data-i18n="projects.p5.title">Sistema Canal de "Chinecas"</h3>
+              <p class="project-description" data-i18n="projects.p5.desc">
                 Desarrollada con Spring Boot y MySQL para gestionar agricultores, 
                 parcelas y el consumo de agua, optimizando la administración hídrica del canal.
               </p>
@@ -334,7 +339,7 @@
               </div>
               <div class="project-actions">
                 <a href="https://github.com/Alons08/CanalChinecas-Web" target="_blank" class="project-btn btn-outline">
-                  <i class="fab fa-github"></i> Código
+                  <i class="fab fa-github"></i> <span data-i18n="projects.btnCode">Código</span>
                 </a>
               </div>
             </div>
@@ -344,11 +349,11 @@
           <div class="project-card" data-category="web">
             <div class="project-image">
               <img src="img/kingsman1.png" alt="Tienda KingsMan">
-              <div class="project-category">Web</div>
+              <div class="project-category" data-i18n="projects.filterWeb">Web</div>
             </div>
             <div class="project-content">
-              <h3 class="project-title">Tienda de Ropa "KingsMan"</h3>
-              <p class="project-description">
+              <h3 class="project-title" data-i18n="projects.p6.title">Tienda de Ropa "KingsMan"</h3>
+              <p class="project-description" data-i18n="projects.p6.desc">
                 Desarrollada con HTML, CSS, JavaScript y MySQL para gestionar productos, 
                 carrito de compras y formularios con validaciones básicas.
               </p>
@@ -360,7 +365,7 @@
               </div>
               <div class="project-actions">
                 <a href="https://github.com/Alons08/KingsMan" target="_blank" class="project-btn btn-outline">
-                  <i class="fab fa-github"></i> Código
+                  <i class="fab fa-github"></i> <span data-i18n="projects.btnCode">Código</span>
                 </a>
               </div>
             </div>
@@ -370,11 +375,11 @@
           <div class="project-card" data-category="desktop">
             <div class="project-image">
               <img src="img/colegioSwing1.png" alt="Sistema Colegio">
-              <div class="project-category">Escritorio</div>
+              <div class="project-category" data-i18n="projects.filterDesktop">Escritorio</div>
             </div>
             <div class="project-content">
-              <h3 class="project-title">Sistema Colegio "Santa Rosa de Lima"</h3>
-              <p class="project-description">
+              <h3 class="project-title" data-i18n="projects.p7.title">Sistema Colegio "Santa Rosa de Lima"</h3>
+              <p class="project-description" data-i18n="projects.p7.desc">
                 Aplicación de escritorio desarrollada con Java y MySQL para gestionar alumnos, 
                 docentes, matrículas, notas y pagos en el colegio Santa Rosa de Lima.
               </p>
@@ -385,14 +390,14 @@
               <div class="project-actions">
                 <!--
                 <a href="#" class="project-btn btn-primary">
-                  <i class="fas fa-desktop"></i> App
+                  <i class="fas fa-desktop"></i> <span data-i18n="projects.btnApp">App</span>
                 </a>
                 <a href="#" class="project-btn btn-secondary">
-                  <i class="fas fa-play"></i> Video
+                  <i class="fas fa-play"></i> <span data-i18n="projects.btnVideo">Video</span>
                 </a>
                 -->
                 <a href="https://github.com/Alons08/Colegio_Santa-Rosa-De-Lima" target="_blank" class="project-btn btn-outline">
-                  <i class="fab fa-github"></i> Código
+                  <i class="fab fa-github"></i> <span data-i18n="projects.btnCode">Código</span>
                 </a>
               </div>
             </div>
@@ -402,11 +407,11 @@
           <div class="project-card" data-category="desktop">
             <div class="project-image">
               <img src="img/sumermarket1.png" alt="Supermarket NIBBLE">
-              <div class="project-category">Escritorio</div>
+              <div class="project-category" data-i18n="projects.filterDesktop">Escritorio</div>
             </div>
             <div class="project-content">
-              <h3 class="project-title">Supermarket "NIBBLE"</h3>
-              <p class="project-description">
+              <h3 class="project-title" data-i18n="projects.p8.title">Supermarket "NIBBLE"</h3>
+              <p class="project-description" data-i18n="projects.p8.desc">
                 Aplicación de escritorio desarrollada en Java y SQL Server para gestionar productos, 
                 empleados, clientes y promociones, optimizando la operación del supermercado.
               </p>
@@ -417,14 +422,14 @@
               <div class="project-actions">
                 <!--
                 <a href="#" class="project-btn btn-primary">
-                  <i class="fas fa-desktop"></i> App
+                  <i class="fas fa-desktop"></i> <span data-i18n="projects.btnApp">App</span>
                 </a>
                 <a href="#" class="project-btn btn-secondary">
-                  <i class="fas fa-play"></i> Video
+                  <i class="fas fa-play"></i> <span data-i18n="projects.btnVideo">Video</span>
                 </a>
                 -->
                 <a href="https://github.com/Alons08/Supermarket-NIBBLE" target="_blank" class="project-btn btn-outline">
-                  <i class="fab fa-github"></i> Código
+                  <i class="fab fa-github"></i> <span data-i18n="projects.btnCode">Código</span>
                 </a>
               </div>
             </div>
@@ -437,12 +442,12 @@
     <!-- Contacto Directo Mejorado -->
     <section id="contact" class="section contact-section">
       <div class="container">
-        <h2>Contacto</h2>
+        <h2 data-i18n="contact.title">Contacto</h2>
         <div class="contact-container">
           <div class="contact-card">
             <div class="contact-header">
-              <h4>¡Hablemos!</h4>
-              <p>Disponible para colaboraciones</p>
+              <h4 data-i18n="contact.headerTitle">¡Hablemos!</h4>
+              <p data-i18n="contact.headerSub">Disponible para colaboraciones</p>
             </div>
 
             <div class="contact-methods">
@@ -457,7 +462,7 @@
                 <div class="contact-details">
                   <h4>WhatsApp</h4>
                   <p>+51 931 088 900</p>
-                  <span class="contact-action">Enviar mensaje</span>
+                  <span class="contact-action" data-i18n="contact.sendMessage">Enviar mensaje</span>
                 </div>
               </a>
 
@@ -469,16 +474,16 @@
                   <i class="fas fa-envelope"></i>
                 </div>
                 <div class="contact-details">
-                  <h4>Correo Electrónico</h4>
+                  <h4 data-i18n="contact.emailTitle">Correo Electrónico</h4>
                   <p>alonso.lq08@gmail.com</p>
-                  <span class="contact-action">Enviar correo</span>
+                  <span class="contact-action" data-i18n="contact.sendEmail">Enviar correo</span>
                 </div>
               </a>
 
               <div class="contact-footer">
-                <p><i class="fas fa-clock"></i> Lunes a domingo, 9am - 11pm</p>
+                <p><i class="fas fa-clock"></i> <span data-i18n="contact.hours">Lunes a domingo, 9am - 11pm</span></p>
                 <p class="response-time">
-                  <i class="fas fa-bolt"></i> Respuesta rápida
+                  <i class="fas fa-bolt"></i> <span data-i18n="contact.quickResponse">Respuesta rápida</span>
                 </p>
               </div>
             </div>
@@ -491,7 +496,7 @@
     <footer class="footer">
       <div class="container">
         <p class="footer-text">
-          &copy; 2025 Alonso Leandro. Todos los derechos reservados.
+          &copy; 2026 Alonso Leandro. <span data-i18n="footer.rights">Todos los derechos reservados.</span>
         </p>
       </div>
     </footer>

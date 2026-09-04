@@ -110,13 +110,47 @@ body {
   width: 100%;
 }
 
+.navbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.lang-toggle {
+  background: none;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  width: 52px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.lang-toggle:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
 .theme-toggle {
   background: none;
   border: none;
   color: var(--text-color);
   font-size: 1.2rem;
+  width: 52px;
+  height: 40px;
   cursor: pointer;
-  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -976,7 +1010,21 @@ body {
   }
 
   .menu-toggle {
-    display: block;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-controls {
+    gap: 0.25rem;
+  }
+
+  .lang-toggle,
+  .theme-toggle {
+    width: 48px;
+    height: 44px;
   }
 
   .hero h1 {
